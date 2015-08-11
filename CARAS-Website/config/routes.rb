@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'pages_controller#about_us'
+  get 'about-us' => 'pages_controller#about_us'
+  get 'meet-the-team' => 'pages_controller#meet_the_team'
+  get 'events' => 'pages_controller#events'
+  get 'gallery' => 'pages_controller#gallery'
+  get 'blog' => 'pages_controller#blog'
+  get 'contact-us' => 'pages_controller#contact_us'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
