@@ -15,6 +15,8 @@ class PagesControllerController < ApplicationController
 	end
 	def donate_en
 	end
+	def tamale_fest_2015_en
+	end
 
 	# Define spanish pages
 	def about_us_es
@@ -31,5 +33,7 @@ class PagesControllerController < ApplicationController
 	def volunteer_es
 	end
 	def donate_es
+	end
+	def tamale_fest_2015_es
 	end
 end
