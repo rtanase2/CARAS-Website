@@ -4,14 +4,12 @@ Rails.application.routes.draw do
   get 'meet-the-team-en' => 'pages_controller#meet_the_team_en'
   get 'events-en' => 'pages_controller#events_en'
   get 'gallery-en' => 'pages_controller#gallery_en'
-  get 'blog-en' => 'pages_controller#blog_en'
   get 'contact-us-en' => 'pages_controller#contact_us_en'
 
   get 'about-us-es' => 'pages_controller#about_us_es'
   get 'meet-the-team-es' => 'pages_controller#meet_the_team_es'
   get 'events-es' => 'pages_controller#events_es'
   get 'gallery-es' => 'pages_controller#gallery_es'
-  get 'blog-es' => 'pages_controller#blog_es'
   get 'contact-us-es' => 'pages_controller#contact_us_es'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
