@@ -14,6 +14,7 @@ class PagesControllerController < ApplicationController
 	def volunteer_en
 	end
 	def donate_en
+	end
 
 	# Define spanish pages
 	def about_us_es
