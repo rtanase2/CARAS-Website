@@ -3,6 +3,18 @@
 
 <head>
 	<title>CARAS | Tamale Fest 2015</title>
+  <script>
+    $(document).ready(function(){
+      var tabOption = "description";
+
+      $(".nav-tabs").click(function(e){
+        console.log(e.toElement.id);
+        $('#' + tabOption).parent().removeClass("active");
+        $('#' + e.toElement.id).parent().addClass("active");
+        tabOption = e.toElement.id;
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -58,10 +70,10 @@
       </ol>
 
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Description</a></li>
-        <li role="presentation"><a href="#">Sponsors</a></li>
-        <li role="presentation"><a href="#">Entertainment and Vendors</a></li>
-        <li role="presentation"><a href="#">Contest and Vendor Registration</a></li>
+        <li role="presentation" class="active"><a href="#" id="description" >Description</a></li>
+        <li role="presentation"><a href="#" id="sponsors">Sponsors</a></li>
+        <li role="presentation"><a href="#" id="entertainment">Entertainment and Vendors</a></li>
+        <li role="presentation"><a href="#" id="registration">Contest and Vendor Registration</a></li>
       </ul>
       <div id="tab-container">
         <h1>Second annual tamale fest</h1>
