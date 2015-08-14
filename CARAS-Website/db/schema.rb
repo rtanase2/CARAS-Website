@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150811012112) do
     t.text     "state"
     t.text     "image1"
     t.text     "image2"
+    t.text     "language"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

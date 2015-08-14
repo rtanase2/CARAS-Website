@@ -5,7 +5,7 @@ class PagesControllerController < ApplicationController
 	def meet_the_team_en
 	end
 	def events_en
-		@events = Event.all
+		 @events = Event.all
 	end
 	def contact_us_en
 	end
@@ -22,7 +22,7 @@ class PagesControllerController < ApplicationController
 	def meet_the_team_es
 	end
 	def events_es
-		@events = Event.all
+		 @events = Event.all
 	end
 	def contact_us_es
 	end
