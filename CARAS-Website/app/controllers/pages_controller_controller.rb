@@ -11,8 +11,9 @@ class PagesControllerController < ApplicationController
 	end
 	def gallery_en
 	end
-	def blog_en
+	def volunteer_en
 	end
+	def donate_en
 
 	# Define spanish pages
 	def about_us_es
@@ -26,6 +27,8 @@ class PagesControllerController < ApplicationController
 	end
 	def gallery_es
 	end
-	def blog_es
+	def volunteer_es
+	end
+	def donate_es
 	end
 end
