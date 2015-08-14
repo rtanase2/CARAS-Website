@@ -2,32 +2,75 @@
 <html>
 
 <head>
-	<title>CARAS | Acerca de Nosotros</title>
+  <title>CARAS | Acerca de Nosotros</title>
 </head>
 
 <body>
-	<div id="header">
-  	<table>
-  		<tr>
-  		   <td><img id="logo" src="/../caras-logo-transparent-no-text.png"></img></td>
-  		   <td><h2>CARAS</h2>
-  	<h3>Agencia de la Comunidad por los </br>Recursos, Defensa y Servicios</h3></td>
-  	    </tr>
-  	</table>
-  	
-  	
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CARAS</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Acerca de Nosotros<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Aser Contacto con Nosotros</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eventos<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Festival de Tamal</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Voluntario</a></li>
+        <li><a href="#">Galería</a></li>
+        <li><a href='#'>Conocer al Equipo</a></li>
+        <li><a href='#'>Donar</a><li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="jumbotron" style="background-image: url(nativemural1024x768.jpg);">
+  <div>
+    <h1>CARAS</h1>
+    <p>Learn About Our Organization</p>
   </div>
-  
-  <div id="nav">
-    <ul>
-      <li><%= link_to('Acerca de Nosotros', '/es/about-us') %></li>
-      <li><%= link_to('Contáctenos', '/es/contact-us') %></li>
-      <li><%= link_to('Eventos', '/es/events') %></li>
-      <li><%= link_to('Galería', '/es/gallery') %></li>
-      <li><%= link_to('El Blog', '/es/blog') %></li>
-      <li><%= link_to('Conocer al Equipo', '/es/meet-the-team') %></li>
-    </ul>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div id="left" style="float: left">
+        <h1><img src="caras-logo-transparent-no-text.png" width="300px" style="padding-right: 20px;"></img></h1>
+      </div>
+      <div id="right">
+      <h1>SPANISH About CARAS SPANISH</h1>
+      <p>SPANISH CARAS was founded in 2011. SPANISH Our goal is to provide services and resources for the Latino community. SPANISH</p>
+      <p>SPANISH We offer many great services such as help with legal SPANISH documents, classes to help immigrants SPANISH get driver's licenses and much more. SPANISH</p>
+      </div>
+    </div>
+</div>
+
+<footer class="footer">
+  <div class="container" style="text-align: center">
+    <hr/>
+    <div class="container">
+      <a href="https://www.facebook.com/pages/CARAS/161098187307902?sk=timeline&ref=page_internal" style="padding-right: 5px" target="_blank"><img alt="Facebook" src="FB-f-Logo__blue_57.png" width = "25px"></img></a>
+      <a href="#" target="_blank"><img alt="Instagram" src="Instagram_Icon_Large.png" width="25px"></img></a>
+      <a href="#" target="_blank"><img alt="Twitter" src="TwitterLogo.png" width="30px"></img></a>
+    </div>
+    <p class="text-muted">&copy CARAS 2015</br><a id="espanol" class="text-muted" href="about-us-en">English?</a></p>
   </div>
+</footer>
+
 </body>
 
 </html>
