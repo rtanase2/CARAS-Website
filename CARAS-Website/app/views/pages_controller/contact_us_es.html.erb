@@ -3,6 +3,21 @@
 
 <head>
 	<title>CARAS | Contáctenos</title>
+  <script>$(document).ready(function(){
+                    if($('body').width() < 638){
+                        $('iframe').css("display", "none");
+                      }
+
+                    $(window).resize(function() {
+                      if($('body').width() < 638){
+                        $('iframe').css("display", "none");
+                      }
+                      else{
+                        $('iframe').css("display", "block");
+                      }
+                    });
+                  });
+        </script>
 </head>
 
 <body>
@@ -22,7 +37,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Acerca de Nosotros</a></li>
+        <li><a href="about-us-es">Acerca de Nosotros</a></li>
         <li class="active"><a href="#">Aser Contacto con Nosotros<span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eventos<span class="caret"></span></a>

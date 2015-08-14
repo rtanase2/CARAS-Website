@@ -3,6 +3,21 @@
 
 <head>
   <title>CARAS | Contact Us</title>
+  <script>$(document).ready(function(){
+                    if($('body').width() < 638){
+                        $('iframe').css("display", "none");
+                      }
+
+                    $(window).resize(function() {
+                      if($('body').width() < 638){
+                        $('iframe').css("display", "none");
+                      }
+                      else{
+                        $('iframe').css("display", "block");
+                      }
+                    });
+                  });
+        </script>
 </head>
 
 <body>
@@ -15,6 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+
       </button>
       <a class="navbar-brand" href="#">CARAS</a>
     </div>
@@ -22,7 +38,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
+        <li><a href="about-us-en">About</a></li>
         <li class="active"><a href="#">Contact<span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="caret"></span></a>
@@ -52,10 +68,13 @@
         <h1><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3186.1564810305445!2d-121.5681427!3d37.0060631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091e3b977fa2433%3A0xc938153c171926e0!2s7365+Monterey+Rd%2C+Gilroy%2C+CA+95020!5e0!3m2!1sen!2sus!4v1439514560273" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></h1>
       </div>
       <div id="right">
-      <h1>About CARAS</h1>
-      <p>CARAS was founded in 2011. Our goal is to provide services and resources for the Latino community.</p>
-      <p>We offer many great services such as help with legal documents, classes to help immigrants
-        get driver's licenses and much more.</p>
+      <h1>Contact Information</h1>
+      <h2>Office</h2>
+      <p>We recently moved into an amazing new office at the Old Gilroy Hotel. Our street address is <b>7365 Monterey Rd Gilroy, CA 95020</b>.</p>
+      <h2>Phone</h2>
+      <p>(408)847-4978</p>
+      <h2>Fax</h2>
+      <p>(408)846-1089</p>
       </div>
     </div>
 </div>
