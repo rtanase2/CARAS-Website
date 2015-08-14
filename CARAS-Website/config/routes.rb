@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   root 'pages_controller#about_us_en'
-  get '/en/about-us' => 'pages_controller#about_us_en'
-  get '/en/meet-the-team' => 'pages_controller#meet_the_team_en'
-  get '/en/events' => 'pages_controller#events_en'
-  get '/en/gallery' => 'pages_controller#gallery_en'
-  get '/en/blog' => 'pages_controller#blog_en'
-  get '/en/contact-us' => 'pages_controller#contact_us_en'
+  get 'about-us-en' => 'pages_controller#about_us_en'
+  get 'meet-the-team-en' => 'pages_controller#meet_the_team_en'
+  get 'events-en' => 'pages_controller#events_en'
+  get 'gallery-en' => 'pages_controller#gallery_en'
+  get 'blog-en' => 'pages_controller#blog_en'
+  get 'contact-us-en' => 'pages_controller#contact_us_en'
 
-  get '/es/about-us' => 'pages_controller#about_us_es'
-  get '/es/meet-the-team' => 'pages_controller#meet_the_team_es'
-  get '/es/events' => 'pages_controller#events_es'
-  get '/es/gallery' => 'pages_controller#gallery_es'
-  get '/es/blog' => 'pages_controller#blog_es'
-  get '/es/contact-us' => 'pages_controller#contact_us_es'
+  get 'about-us-es' => 'pages_controller#about_us_es'
+  get 'meet-the-team-es' => 'pages_controller#meet_the_team_es'
+  get 'events-es' => 'pages_controller#events_es'
+  get 'gallery-es' => 'pages_controller#gallery_es'
+  get 'blog-es' => 'pages_controller#blog_es'
+  get 'contact-us-es' => 'pages_controller#contact_us_es'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
