@@ -20,7 +20,7 @@ $(document).ready(function(){
 		case "gallery":
 			activeTabIndex = 4;
 			break;
-		case "personal":
+		case "conocer al equipo":
 		case "meet the team":
 			activeTabIndex = 5;
 			break;
