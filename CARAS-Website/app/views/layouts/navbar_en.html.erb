@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'navbar_functions', 'data-turbolinks-track' => true %>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,9 +16,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="about-us-en">About</a></li>
-        <li><a href="contact-us-en">Contact</a></li>
-        <li class="dropdown active">
+        <li class="nav-option"><a href="about-us-en">About</a></li>
+        <li class="nav-option"><a href="contact-us-en">Contact</a></li>
+        <li class="dropdown nav-option">
           <a href="events-en" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="sr-only">(current)</span><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% for event in Event.all %>
@@ -24,10 +26,10 @@
             <%end%>
           </ul>
         </li>
-        <li><a href="volunteer-en">Volunteer</a></li>
-        <li><a href="gallery-en">Gallery</a></li>
-        <li><a href='meet-the-team-en'>Meet the Team</a></li>
-        <li><a href='donate-en'>Donate</a><li>
+        <li class="nav-option"><a href="volunteer-en">Volunteer</a></li>
+        <li class="nav-option"><a href="gallery-en">Gallery</a></li>
+        <li class="nav-option"><a href='meet-the-team-en'>Meet the Team</a></li>
+        <li class="nav-option"><a href='donate-en'>Donate</a><li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
