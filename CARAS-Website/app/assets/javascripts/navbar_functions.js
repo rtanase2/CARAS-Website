@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var activeTabIndex;
 
 	switch(title){
-		case "acerca de nosotros":
+		case "misión":
 		case "about us":
 			activeTabIndex = 0;
 			break;
@@ -20,7 +20,7 @@ $(document).ready(function(){
 		case "gallery":
 			activeTabIndex = 4;
 			break;
-		case "conocer al equipo":
+		case "personal":
 		case "meet the team":
 			activeTabIndex = 5;
 			break;
