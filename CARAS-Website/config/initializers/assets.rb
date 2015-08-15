@@ -2,6 +2,8 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
+Rails.application.config.assets.precompile += %w( tamale_tabs_en_functions.js )
+Rails.application.config.assets.precompile += %w( contact_us_functions.js )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

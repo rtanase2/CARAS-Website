@@ -2,57 +2,13 @@
 <html>
 
 <head>
-	<title>CARAS | Tamale Fest 2015</title>
-  <script>
-    $(document).ready(function(){
-      var tabOption = "description";
-
-      $(".nav-tabs").click(function(e){
-        console.log(e.toElement.id);
-        $('#' + tabOption).parent().removeClass("active");
-        $('#' + e.toElement.id).parent().addClass("active");
-        tabOption = e.toElement.id;
-      });
-    });
-  </script>
+	<title>CARAS | Second Annual Tamale Festival</title>
+  <%= javascript_include_tag 'tamale_tabs_en_functions', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="about-us-en">CARAS</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="about-us-en">About</a></li>
-        <li><a href="contact-us-en">Contact</a></li>
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events<span class="sr-only">(current)</span><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% for event in Event.all %>
-              <%= link_to event.name, '#' %>
-            <%end%>
-          </ul>
-        </li>
-        <li><a href="#">Volunteer</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href='#'>Meet the Team</a></li>
-        <li><a href='#'>Donate</a><li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
+<!--<link rel="import" href="/../layouts/navbar_en.html.erb">-->
+<%= render file: "layouts/navbar_en"%>
 <div class="jumbotron" style="margin-bottom: 0; background-image: url(tamale_header_1.jpg);">
   <div>
     <h1 style="color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Second Annual Tamale Festival</h1>
@@ -75,10 +31,7 @@
         <li role="presentation"><a href="#" id="entertainment">Entertainment and Vendors</a></li>
         <li role="presentation"><a href="#" id="registration">Contest and Vendor Registration</a></li>
       </ul>
-      <div id="tab-container">
-        <h1>Second annual tamale fest</h1>
-        <p>great descriptions!! </p>
-      </div>
+      <div id="tab-container"></div>
     </div>
 </div>
 
