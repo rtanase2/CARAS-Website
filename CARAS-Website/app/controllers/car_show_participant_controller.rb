@@ -1,0 +1,2 @@
+class CarShowParticipantController < ApplicationController
+end

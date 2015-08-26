@@ -1,0 +1,2 @@
+class CookOffParticipantController < ApplicationController
+end
