@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'gallery-en' => 'pages_controller#gallery_en'
   get 'contact-us-en' => 'pages_controller#contact_us_en'
   get 'donate-en' => 'pages_controller#donate_en'
-  get 'volunteer-en' => 'pages_controller#volunteer_en'
+  get '/volunteer-en' => 'pages_controller#volunteer_en'
   get 'tamale-fest-2015-en' => 'pages_controller#tamale_fest_2015_en'
 
   get 'about-us-es' => 'pages_controller#about_us_es'

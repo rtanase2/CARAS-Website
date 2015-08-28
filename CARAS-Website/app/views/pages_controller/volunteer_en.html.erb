@@ -7,6 +7,24 @@
 
 <body>
 	<%= render file: "layouts/navbar_en"%>
+	
+	<div class="jumbotron">
+		<div>
+			<h1>Volunteer</h1>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div id="right">
+				<h1>Forms</h1>
+				<p>If you'd like to volunteer for our events, please download and fill the forms below.</p>
+				<%= link_to "Liability Release Form", "CARASLiabilityReleaseForm.pdf" %>
+				<br><%= link_to "Volunteer Form", "CARASVolunteerIntake.pdf" %></br>
+			</div>
+		</div>
+	</div>
+	
 	<%= render file: "layouts/footer" %>
 </body>
 
