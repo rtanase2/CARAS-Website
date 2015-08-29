@@ -1,7 +1,11 @@
 $(document).ready(function(){
-	var languageBtnTxt = $('#language-button').text();
+	var currPath = window.location.href;
+	var currLang = currPath.slice(-2);
+	var hasLangParam = currPath.indexOf("lang") != -1;
+	var pageInSpanish = currLang === 'es';
+	var language = ((hasLangParam && pageInSpanish) ? "English?" : "Espanol?");
 	var currLanguage = 
-	           ((languageBtnTxt.slice(0, 2).toLowerCase() === 'en') ?
+	           ((language.slice(0, 2).toLowerCase() === 'en') ?
 							'es' : 'en');
 	setActiveSelection();
 	fillInOptionsText(currLanguage);
