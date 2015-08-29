@@ -1,15 +1,46 @@
 $(document).ready(function(){
-	setActiveTab();
+	var languageBtnTxt = $('#language-button').text();
+	var currLanguage = 
+	           ((languageBtnTxt.slice(0, 2).toLowerCase() === 'en') ?
+							'es' : 'en');
+	setActiveSelection();
+	fillInOptionsText(currLanguage);
+	fillInEventsDropdown(currLanguage);
 });
 
-function setActiveTab(){
-	var activeTabIndex = findActiveTab();
+function fillInEventsDropdown(lang){
+
+}
+
+function fillInOptionsText(lang){
+	var tabText;
+	var links = [$('#about-us'), $('#contact-us'), $('#events'), 
+	             $('#volunteer'), $('#gallery'), $('#meet-the-team'),
+	             $('#donate')];
+	switch(lang){
+		case "en":
+			tabText = ["About", "Contact", "Events", "Volunteer", 
+			           "Gallery", "Meet the Team", "Donate"];
+			break;
+		case "es":
+			tabText = ["Misión", "Contacto", "Eventos", "Voluntario", 
+			           "Galería", "Conocer al Equipo", "Donar"];
+			break;
+	}
+	for(x = 0; x < tabText.length; x++){
+		links[x].text(tabText[x]);
+		links[x].attr('href', links[x].attr('id') + "?lang=" + lang);
+	}	
+}
+
+function setActiveSelection(){
+	var activeTabIndex = findActiveSelection();
 	var activeTab = $($('.nav-option')[activeTabIndex]);
 	activeTab.addClass("active");
 	activeTab.append("<span class=\"sr-only\">(current)</span>");
 }
 
-function findActiveTab(){
+function findActiveSelection(){
 	var title = $('title').text();
 	title = title.replace("CARAS | ", "").toLowerCase();
 
