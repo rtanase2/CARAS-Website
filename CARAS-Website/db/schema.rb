@@ -61,11 +61,7 @@ ActiveRecord::Schema.define(version: 20150829191139) do
 
   create_table "pages", force: :cascade do |t|
     t.text   "innerHTML"
-    t.string "title"
     t.string "lang"
-    t.text   "jumbotronTitle"
-    t.text   "jumbotronDesc"
-    t.text   "jumbotronImagePath"
     t.string "pageType"
   end
 
