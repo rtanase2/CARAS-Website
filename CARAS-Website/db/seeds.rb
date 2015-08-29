@@ -284,13 +284,53 @@ pageType: "tamale-fest")
 Page.create(innerHTML: "
     <head>
     <title>CARAS | Volunteer</title>
-</head>", 
+</head>
+
+<body>    
+    <div class=\"jumbotron\" style=\"margin-bottom: 0; background-image: url(temple_jumbotron_img.jpg);\">
+        <div>
+            <h1 style=\"color: black;  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;\">Volunteer</h1>
+        </div>
+    </div>
+    
+    <p style=\"font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px\">Photo by <a style=\"padding-left: 0\" href=\"https://www.flickr.com/photos/celso/\" target=\"_blank\">Celso FLORES</a>. License can be found <a style=\"padding-left: 0\" href=\"https://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">here</a>. Modifications: Cropped photo.</p>
+
+    <div class=\"container\">
+        <div class=\"row\">
+            <div id=\"right\">
+                <h1>Forms</h1>
+                <p>If you'd like to volunteer for our events, please download and fill the forms below.</p>
+                <a href=\"/PDFs/CARASLiabilityReleaseForm.pdf\">Liability Release Form</a>
+                <br><a href=\"/PDFs/CARASVolunteerIntake.pdf\">Volunteer Form</a>
+            </div>
+        </div>
+    </div>", 
 lang: "en",
 pageType: "volunteer")
 
 Page.create(innerHTML: "
     <head>
-    <title>CARAS | Voluntario</title>
-</head>", 
+    <title>CARAS | Volunteer</title>
+</head>
+
+<body>    
+    <div class=\"jumbotron\" style=\"margin-bottom: 0; background-image: url(temple_jumbotron_img.jpg);\">
+        <div>
+            <h1 style=\"color: black;  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;\">Volunteer</h1>
+        </div>
+    </div>
+    
+    <p style=\"font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px\">Photo by <a style=\"padding-left: 0\" href=\"https://www.flickr.com/photos/celso/\" target=\"_blank\">Celso FLORES</a>. License can be found <a style=\"padding-left: 0\" href=\"https://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">here</a>. Modifications: Cropped photo.</p>
+
+    <div class=\"container\">
+        <div class=\"row\">
+            <div id=\"right\">
+                <h1>Forms</h1>
+                <p>If you'd like to volunteer for our events, please download and fill the forms below.</p>
+                <a href=\"/PDFs/CARASLiabilityReleaseForm.pdf\">Liability Release Form</a>
+                <br><a href=\"/PDFs/CARASVolunteerIntake.pdf\">Volunteer Form</a>
+            </div>
+        </div>
+    </div>", 
 lang: "es",
 pageType: "volunteer")
