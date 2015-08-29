@@ -36,7 +36,6 @@ Page.create(innerHTML:
         <p>CARAS is a non-profit organization formed to serve incoming youth and families in the community throu providing culturally competent and sensitive programming based on the needs and assets present in South Santa Clara County.</p>
         <p>Caras was formed by community memebers concerned with the lack of services available to Latino families. The services we provide include, but are not limited to, programs for parents, women, children, adolescents and seniors.</p>
         <p>CARAS programs focus on leadership, intervention for at risk youth, education and health and fitness as well as advocacy and immigrant's rights.</p>
-        <%= link_to \"Sample File Download\", \"/PDFs/TE_Self_Checklist.pdf\" %>
       </div>
     </div>
 </div>",  
@@ -78,7 +77,6 @@ pageType: "about-us")
 Page.create(innerHTML:
     "<head>
   <title>CARAS | Contact Us</title>
-  <%= javascript_include_tag 'contact_us_functions', 'data-turbolinks-track' => true %>
 
 <body>
 <div class=\"jumbotron\" style=\"background-image: url(aztecmural.jpg);\">
@@ -110,7 +108,6 @@ pageType: "contact-us")
 Page.create(innerHTML:
     "<head>
     <title>CARAS | Aser Contacto con Nosotros</title>
-  <%= javascript_include_tag 'contact_us_functions', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
@@ -215,7 +212,6 @@ pageType: "meet-the-team")
 Page.create(innerHTML: 
     "<head>
     <title>CARAS | Second Annual Tamale Festival</title>
-  <%= javascript_include_tag 'tamale_tabs_en_functions', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
@@ -231,15 +227,15 @@ Page.create(innerHTML:
 <div class=\"container\">
     <div class=\"row\">
       <ol class=\"breadcrumb\">
-        <li><a style=\"padding-left: 0;\" href=\"events-en\">Events</a></li>
-        <li class=\"active\"><a style=\"padding-left: 0;\" href=\"#\">Second Annual Tamale Festival</a></li>
+        <li><a style=\"padding-left: 0;\" href=\"events?lang=en\">Events</a></li>
+        <li class=\"active\"><a style=\"padding-left: 0;\">Second Annual Tamale Festival</a></li>
       </ol>
 
       <ul class=\"nav nav-tabs\">
-        <li role=\"presentation\" class=\"active\"><a href=\"#\" id=\"description\" >Description</a></li>
-        <li role=\"presentation\"><a href=\"#\" id=\"sponsors\">Sponsors</a></li>
-        <li role=\"presentation\"><a href=\"#\" id=\"entertainment\">Entertainment and Vendors</a></li>
-        <li role=\"presentation\"><a href=\"#\" id=\"registration\">Contest and Vendor Registration</a></li>
+        <li role=\"presentation\" class=\"active\"><a id=\"description\" >Description</a></li>
+        <li role=\"presentation\"><a id=\"sponsors\">Sponsors</a></li>
+        <li role=\"presentation\"><a id=\"entertainment\">Entertainment and Vendors</a></li>
+        <li role=\"presentation\"><a id=\"registration\">Contest and Vendor Registration</a></li>
       </ul>
       <div id=\"tab-container\"></div>
     </div>
@@ -250,7 +246,6 @@ pageType: "tamale-fest")
 Page.create(innerHTML: 
     "<head>
     <title>CARAS | Festival del Tamal</title>
-    <%= javascript_include_tag 'tamale_tabs_es_functions', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
@@ -266,15 +261,15 @@ Page.create(innerHTML:
     <div class=\"container\">
         <div class=\"row\">
           <ol class=\"breadcrumb\">
-            <li><a style=\"padding-left: 0;\" href=\"events-en\">Eventos</a></li>
-            <li class=\"active\"><a style=\"padding-left: 0;\" href=\"#\">Festival de Tamal</a></li>
+            <li><a style=\"padding-left: 0;\" href=\"events?lang=es\">Eventos</a></li>
+            <li class=\"active\"><a style=\"padding-left: 0;\">Festival de Tamal</a></li>
           </ol>
 
           <ul class=\"nav nav-tabs\">
-            <li role=\"presentation\" class=\"active\"><a href=\"#\" id=\"description\" >Description SPANISH</a></li>
-            <li role=\"presentation\"><a href=\"#\" id=\"sponsors\">Sponsors SPANISH</a></li>
-            <li role=\"presentation\"><a href=\"#\" id=\"entertainment\">Entertainment and Vendors SPANISH</a></li>
-            <li role=\"presentation\"><a href=\"#\" id=\"registration\">Contest and Vendor Registration SPANISH</a></li>
+            <li role=\"presentation\" class=\"active\"><a id=\"description\" >Description SPANISH</a></li>
+            <li role=\"presentation\"><a id=\"sponsors\">Sponsors SPANISH</a></li>
+            <li role=\"presentation\"><a id=\"entertainment\">Entertainment and Vendors SPANISH</a></li>
+            <li role=\"presentation\"><a id=\"registration\">Contest and Vendor Registration SPANISH</a></li>
           </ul>
           <div id=\"tab-container\"></div>
         </div>
