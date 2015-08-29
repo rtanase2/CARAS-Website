@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#show", page: "about_us_en"
+  root "pages#show", page: "about-us-en"
   get ":page" => "pages#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
