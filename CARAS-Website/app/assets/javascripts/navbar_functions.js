@@ -1,10 +1,13 @@
 $(document).ready(function(){
-	var activeTabIndex = findActiveTab();
+	setActiveTab();
+});
 
+function setActiveTab(){
+	var activeTabIndex = findActiveTab();
 	var activeTab = $($('.nav-option')[activeTabIndex]);
 	activeTab.addClass("active");
 	activeTab.append("<span class=\"sr-only\">(current)</span>");
-});
+}
 
 function findActiveTab(){
 	var title = $('title').text();
