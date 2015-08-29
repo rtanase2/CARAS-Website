@@ -1,38 +1,35 @@
 $(document).ready(function(){
-	var title = $('title').text();
-	title = title.replace("CARAS | ", "").toLowerCase();
-	var activeTabIndex;
+	var activeTabIndex = findActiveTab();
 
-	switch(title){
-		case "misión":
-		case "about us":
-			activeTabIndex = 0;
-			break;
-		case "aser contacto con nosotros":
-		case "contact us":
-			activeTabIndex = 1;
-			break;
-		case "voluntario":
-		case "volunteer":
-			activeTabIndex = 3;
-			break;
-		case "galería":
-		case "gallery":
-			activeTabIndex = 4;
-			break;
-		case "conocer al equipo":
-		case "meet the team":
-			activeTabIndex = 5;
-			break;
-		case "donar":
-		case "donate":
-			activeTabIndex = 6;
-			break;
-		default:
-			activeTabIndex = 2;
-			break;
-	}
 	var activeTab = $($('.nav-option')[activeTabIndex]);
 	activeTab.addClass("active");
 	activeTab.append("<span class=\"sr-only\">(current)</span>");
 });
+
+function findActiveTab(){
+	var title = $('title').text();
+	title = title.replace("CARAS | ", "").toLowerCase();
+
+	switch(title){
+		case "misión":
+		case "about us":
+			return(0);
+		case "aser contacto con nosotros":
+		case "contact us":
+			return(1);
+		case "voluntario":
+		case "volunteer":
+			return(3);
+		case "galería":
+		case "gallery":
+			return(4);
+		case "conocer al equipo":
+		case "meet the team":
+			return(5);
+		case "donar":
+		case "donate":
+			return(6);
+		default:
+			return(2);
+	}
+}
