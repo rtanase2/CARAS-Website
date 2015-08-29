@@ -4,9 +4,6 @@ class CreatePages < ActiveRecord::Migration
         t.text :innerHTML
         t.string :title
         t.string :lang
-        t.text :jumbotronTitle
-        t.text :jumbotronDesc
-        t.text :jumbotronImagePath
         t.string :pageType
     end
   end
