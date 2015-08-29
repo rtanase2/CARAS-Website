@@ -7,10 +7,8 @@ class PagesController < ApplicationController
 
 		if valid_page?
 			render template: "pages/#{params[:page]}"
-			print "validNil"
 		else 
 			render file: "public/404.html", status: :not_found
-			print "#{params[:page]} #{params[:lang]}"
 		end
 
 	end
