@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816163317) do
+ActiveRecord::Schema.define(version: 20150829191139) do
 
   create_table "car_show_participants", force: :cascade do |t|
     t.boolean  "paid"
@@ -49,14 +49,23 @@ ActiveRecord::Schema.define(version: 20150816163317) do
     t.text     "name"
     t.text     "description"
     t.date     "date"
-    t.text     "street_address"
-    t.text     "city"
-    t.text     "zip_code"
-    t.text     "state"
-    t.text     "language"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "zip_code"
+    t.string   "state"
+    t.string   "path"
+    t.string   "language"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "path"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.text   "innerHTML"
+    t.string "title"
+    t.string "lang"
+    t.text   "jumbotronTitle"
+    t.text   "jumbotronDesc"
+    t.text   "jumbotronImagePath"
   end
 
   create_table "sponsors", force: :cascade do |t|
