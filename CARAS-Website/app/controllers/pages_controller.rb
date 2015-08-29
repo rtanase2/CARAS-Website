@@ -6,13 +6,13 @@ class PagesController < ApplicationController
 
 		@page;
 		for page in Page.all
-			if params[:page] == page.pageType and params[:lang] == page.lang
+			if params[:page].downcase == page.pageType and params[:lang] == page.lang
 				@page = page
 			end
 		end
 
 		if valid_page?
-			render template: "pages/#{params[:page]}"
+			render template: "pages/#{params[:page].downcase}"
 		else 
 			render file: "public/404.html", status: :not_found
 		end
@@ -22,6 +22,6 @@ class PagesController < ApplicationController
 	def valid_page?
 		File.exists?(
 			Pathname.new(Rails.root + 
-			"app/views/pages/#{params[:page]}.html.erb"))
+			"app/views/pages/#{params[:page].downcase}.html.erb"))
 	end
 end
