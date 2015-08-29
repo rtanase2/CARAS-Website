@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
 		if params[:lang] == nil
 			params[:lang] = 'en'
-			print "inHEre"
 		end
 
 		if valid_page?
@@ -18,6 +17,8 @@ class PagesController < ApplicationController
 
 	private
 	def valid_page?
-		File.exists?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}-#{params[:lang]  || 'en'}.html.erb"))
+		File.exists?(
+			Pathname.new(Rails.root + 
+			"app/views/pages/#{params[:page]}-#{params[:lang]}.html.erb"))
 	end
 end
