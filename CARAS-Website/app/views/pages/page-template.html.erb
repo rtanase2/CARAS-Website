@@ -9,6 +9,8 @@
     <%= javascript_include_tag 'tamale_tabs_es_functions', 'data-turbolinks-track' => true %>
 <% end %>
 
+<div id="invisible" data-rubyvar="<%= @events.to_json %>"></div>
+
 <%= @page.innerHTML.html_safe %>
 
 <%= render file: "layouts/footer" %>

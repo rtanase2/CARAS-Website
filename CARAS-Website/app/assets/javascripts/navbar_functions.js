@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var currPath = window.location.href;
+	console.log(currPath);
 	var currLang = currPath.slice(-2);
 	var hasLangParam = currPath.indexOf("lang") != -1;
 	var pageInSpanish = currLang === 'es';
@@ -13,7 +14,13 @@ $(document).ready(function(){
 });
 
 function fillInEventsDropdown(lang){
-
+	var events = $('#invisible').data('rubyvar');
+	var ddm = $('.dropdown-menu');
+	ddm.empty();
+	for (e in events){
+		e = events[e];
+		ddm.append("<a href=" + e.path + ">" + e.name + "</a>");
+	}
 }
 
 function fillInOptionsText(lang){

@@ -4,7 +4,14 @@ class PagesController < ApplicationController
 			params[:lang] = 'en'
 		end
 
-		@page;
+		@page
+		@events = Array.new
+		for event in Event.all
+			if params[:lang].downcase == event.language
+				@events << event
+			end
+		end
+
 		for page in Page.all
 			if params[:page].downcase == page.pageType and params[:lang] == page.lang
 				@page = page
