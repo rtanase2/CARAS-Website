@@ -1,27 +1,10 @@
 Rails.application.routes.draw do
-  root 'pages_controller#about_us_en'
-  get 'about-us-en' => 'pages_controller#about_us_en'
-  get 'meet-the-team-en' => 'pages_controller#meet_the_team_en'
-  get 'events-en' => 'pages_controller#events_en'
-  get 'gallery-en' => 'pages_controller#gallery_en'
-  get 'contact-us-en' => 'pages_controller#contact_us_en'
-  get 'donate-en' => 'pages_controller#donate_en'
-  
-  get '/volunteer-en' => 'pages_controller#volunteer_en'
-  get '/volunteer-en/new' => 'volunteer#new'
-  post '/volunteer-en' => 'volunteer#create'
-  
-  get 'tamale-fest-2015-en' => 'pages_controller#tamale_fest_2015_en'
 
-  get 'about-us-es' => 'pages_controller#about_us_es'
-  get 'meet-the-team-es' => 'pages_controller#meet_the_team_es'
-  get 'events-es' => 'pages_controller#events_es'
-  get 'gallery-es' => 'pages_controller#gallery_es'
-  get 'contact-us-es' => 'pages_controller#contact_us_es'
-  get 'donate-es' => 'pages_controller#donate_es'
-  get 'volunteer-es' => 'pages_controller#volunteer_es'
-  get 'tamale-fest-2015-es' => 'pages_controller#tamale_fest_2015_es'
-  
+  root "pages#show", page: "about-us", lang: "en"
+  get "volunteer-new(\?lang=:lang)" => "volunteer#new"
+  post "volunteer-new(\?lang=:lang)" => "volunteer#create"
+  get ":page(\?lang=:lang)" => "pages#show"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

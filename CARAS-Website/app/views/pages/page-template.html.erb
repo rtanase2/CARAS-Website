@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<% if @page.pageType == "contact-us" %>
+    <%= javascript_include_tag 'contact_us_functions', 'data-turbolinks-track' => true %>
+<% elsif @page.pageType == "tamale-fest" and @page.lang == "en" %>
+    <%= javascript_include_tag 'tamale_tabs_en_functions', 'data-turbolinks-track' => true %>
+<% elsif @page.pageType == "tamale-fest" and @page.lang == "es" %>
+    <%= javascript_include_tag 'tamale_tabs_es_functions', 'data-turbolinks-track' => true %>
+<% end %>
+
+<%= @page.innerHTML.html_safe %>
+
+<%= render file: "layouts/footer" %>
+
+</body>
+
+</html>

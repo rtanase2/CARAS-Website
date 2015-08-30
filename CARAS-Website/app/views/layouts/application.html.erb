@@ -26,7 +26,9 @@
   <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 <body>
-
+	
+<div id="invisible" data-rubyvar="<%= @events.to_json %>"></div>
+<%= render file: "layouts/navbar"%>
 <%= yield %>
 
 </body>
