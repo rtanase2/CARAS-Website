@@ -19,11 +19,87 @@
 			<div id="right">
 				<h1>Forms</h1>
 				<p>If you'd like to volunteer for our events, please download and fill the forms below.</p>
-				<%= link_to "Liability Release Form", "CARASLiabilityReleaseForm.pdf" %>
-				<br><%= link_to "Volunteer Form", "CARASVolunteerIntake.pdf" %></br>
+				<%= link_to "Liability Release Form", "CARASLiabilityReleaseForm.pdf" %><br>
+				<%= link_to "Volunteer Form", "CARASVolunteerIntake.pdf" %>
 			</div>
 		</div>
 	</div>
+	
+	<%= form_for :volunteers do |f| %>
+		<p>
+			<%= f.label :name %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :email %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :address %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :city %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :zip %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :phone %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :age %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :school_name %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :school_phone %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :availability %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :name_org %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :signed_participant %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :parent_name %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.label :signed_parent %><br>
+			<%= f.text_field :text %>
+		</p>
+		
+		<p>
+			<%= f.submit :submit %>
+		</p>
+	<% end %>
 	
 	<%= render file: "layouts/footer" %>
 </body>
