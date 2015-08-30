@@ -1,0 +1,140 @@
+<head>
+    <title>CARAS | Volunteer Registration</title>
+</head>
+
+<body>    
+    <h1>Volunteer</h1>
+
+    <%= form_for :volunteer do |f| %>
+        <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+        </p>
+        
+        <p>
+            <%= f.label :email %><br>
+            <%= f.text_field :email %>
+        </p>
+        
+        <p>
+            <%= f.label :address %><br>
+            <%= f.text_field :address %>
+        </p>
+        
+        <p>
+            <%= f.label :city %><br>
+            <%= f.text_field :city %>
+        </p>
+        
+        <p>
+            <%= f.label :zip %><br>
+            <%= f.text_field :zip %>
+        </p>
+        
+        <p>
+            <%= f.label :phone %><br>
+            <%= f.text_field :phone %>
+        </p>
+        
+        <p>
+            <%= f.label :age %><br>
+            <%= f.text_field :age %>
+        </p>
+
+        <p>
+            <%= f.label(:volunteer_in_school, "Is the volunteer in school?") %> </br>
+            <%= radio_button("volunteer", "volunteer_in_school", true) %>
+            <%= f.label(:volunteer_in_school, "Yes") %> </br>
+            <%= radio_button("volunteer", "volunteer_in_school", false) %>
+            <%= f.label(:volunteer_in_school, "No") %>
+        </p>
+        
+        <p>
+            <%= f.label :school_name %><br>
+            <%= f.text_field :school_name %>
+        </p>
+        
+        <p>
+            <%= f.label :school_phone %><br>
+            <%= f.text_field :school_phone %>
+        </p>
+        
+        <p>
+            <%= f.label :start_date %><br>
+            <%= f.text_field :start_date %>
+        </p>
+
+        <p>
+            <%= f.label(:available_days, "Are you available during the day (SPECIFY TIME FRAME!!!)?") %> </br>
+            <%= radio_button("volunteer", "available_days", true) %>
+            <%= f.label(:available_days, "Yes") %> </br>
+            <%= radio_button("volunteer", "available_days", false) %>
+            <%= f.label(:available_days, "No") %>
+        </p>
+        
+        <p>
+            <%= f.label(:available_mornings, "Are you available in the morning (SPECIFY TIME FRAME!!!)?") %> </br>
+            <%= radio_button("volunteer", "available_mornings", true) %>
+            <%= f.label(:available_mornings, "Yes") %> </br>
+            <%= radio_button("volunteer", "available_mornings", false) %>
+            <%= f.label(:available_mornings, "No") %>
+        </p>
+
+        <p>
+            <%= f.label(:available_evenings, "Are you available in the evening (SPECIFY TIME FRAME!!!)?") %> </br>
+            <%= radio_button("volunteer", "available_evenings", true) %>
+            <%= f.label(:available_evenings, "Yes") %> </br>
+            <%= radio_button("volunteer", "available_evenings", false) %>
+            <%= f.label(:available_evenings, "No") %>
+        </p>
+
+        <p>
+            <%= f.label :availability_by_day %><br>
+            <%= f.text_field :availability_by_day %>
+        </p>
+        
+        <p>
+            <%= f.label(:type_of_service, "What type of service are you most interested in?") %> </br>
+            <%= radio_button("type_of_service", "volunteer_in_school", "event") %>
+            <%= f.label(:type_of_service, "Event") %> </br>
+            <%= radio_button("type_of_service", "volunteer_in_school", "office") %>
+            <%= f.label(:type_of_service, "Office") %> </br>
+            <%= radio_button("type_of_service", "volunteer_in_school", "program") %>
+            <%= f.label(:type_of_service, "Program") %> </br>
+            <%= radio_button("type_of_service", "volunteer_in_school", "other") %>
+            <%= f.label(:type_of_service, "Other") %>
+        </p>
+
+        <p>
+            <%= f.label :name_org %><br>
+            <%= f.text_field :name_org %>
+        </p>
+
+        <p>
+            <%= f.label :event %><br>
+            <%= f.text_field :event %>
+        </p>
+        
+        <p>
+            <%= check_box("volunteer", "signed_participant", {}, true, false) %>
+            <%= f.label(:parent_name, "By check this box, I (the participant), authorize that I would like to volunteer at CARAS.") %>
+        </p>
+        
+        <p>
+            <%= f.label :parent_name %><br>
+            <%= f.text_field :parent_name %>
+        </p>
+        
+        <p>
+            <%= check_box("volunteer", "signed_parent", {}, true, false) %>
+            <%= f.label(:parent_name, "By check this box, I (the gaurdian), authorize that my child can volunteer with CARAS.") %>
+        </p>
+        
+        <p>
+            <%= f.submit :submit %>
+        </p>
+    <% end %>
+
+        
+<%= render file: "layouts/footer"%>
+</body>
