@@ -69,7 +69,7 @@
             <%= radio_button("volunteer", "available_days", true) %>
             <%= f.label(:available_days, "Yes") %> </br>
             <%= radio_button("volunteer", "available_days", false) %>
-            <%= f.label(:available_days, "No") %>
+            <%= f.label(:available_days, "No") %>			
         </p>
         
         <p>
@@ -91,6 +91,77 @@
         <p>
             <%= f.label :availability_by_day %><br>
             <%= f.text_field :availability_by_day %>
+			
+			<!-- Optional stuff 
+				  Made new variables in the controller for Sun-Sat
+			-->
+			
+			<table border="3px">
+				<tr>
+					<td><strong><%= f.label :sunday %></strong></td>
+					<td><strong><%= f.label :monday %></strong></td>
+					<td><strong><%= f.label :tuesday %></strong></td>
+					<td><strong><%= f.label :wednesday %></strong></td>
+					<td><strong><%= f.label :thursday %></strong></td>
+					<td><strong><%= f.label :friday %></strong></td>
+					<td><strong><%= f.label :saturday %></strong></td>
+				</tr>
+				
+				<tr>
+					<td><center><%= check_box("volunteer", "sunday") %></center></td>
+					<td><center><%= check_box("volunteer", "monday") %></center></td>
+					<td><center><%= check_box("volunteer", "tuesday") %></center></td>
+					<td><center><%= check_box("volunteer", "wednesday") %></center></td>
+					<td><center><%= check_box("volunteer", "thursday") %></center></td>
+					<td><center><%= check_box("volunteer", "friday") %></center></td>
+					<td><center><%= check_box("volunteer", "saturday") %></center></td>
+				</tr>
+				
+				<tr>
+					<td>
+						<%= f.label(:time_start_sun, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_sun") %></center><br>
+						<%= f.label(:time_end_sun, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_sun") %></center>
+					</td>
+					<td>
+						<%= f.label(:time_start_mon, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_mon") %></center><br>
+						<%= f.label(:time_end_mon, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_mon") %></center>
+					</td>
+					<td>
+						<%= f.label(:time_start_tues, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_tues") %></center><br>
+						<%= f.label(:time_end_tues, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_tues") %></center>
+					</td>
+					<td>
+						<%= f.label(:time_start_wed, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_wed") %></center><br>
+						<%= f.label(:time_end_wed, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_wed") %></center>
+					</td>
+					<td>
+						<%= f.label(:time_start_thurs, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_thurs") %></center><br>
+						<%= f.label(:time_end_thurs, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_thurs") %></center>
+					</td>
+					<td>
+						<%= f.label(:time_start_fri, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_fri") %></center><br>
+						<%= f.label(:time_end_fri, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_fri") %></center>
+					</td>
+					<td>
+						<%= f.label(:time_start_sat, "Approx. Time Start") %><br>
+						<center><%= time_field("volunteer", "time_start_sat") %></center><br>
+						<%= f.label(:time_end_sat, "Approx. Time End") %><br>
+						<center><%= time_field("volunteer", "time_end_sat") %></center>
+					</td>
+				</tr>
+			</table>
         </p>
         
         <p>

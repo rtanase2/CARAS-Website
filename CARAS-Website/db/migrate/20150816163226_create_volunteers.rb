@@ -22,6 +22,27 @@ class CreateVolunteers < ActiveRecord::Migration
       t.boolean :signed_participant
       t.string :parent_name
       t.boolean :signed_parent
+	  t.boolean :sunday
+	  t.boolean :monday
+	  t.boolean :tuesday
+	  t.boolean :wednesday
+	  t.boolean :thursday
+	  t.boolean :friday
+	  t.boolean :saturday
+	  t.time :time_start_sun
+	  t.time :time_end_sun
+	  t.time :time_start_mon
+	  t.time :time_end_mon
+	  t.time :time_start_tues
+	  t.time :time_end_tues
+	  t.time :time_start_wed
+	  t.time :time_end_wed
+	  t.time :time_start_thurs
+	  t.time :time_end_thurs
+	  t.time :time_start_fri
+	  t.time :time_end_fri
+	  t.time :time_start_sat
+	  t.time :time_end_sat
       t.timestamps null: false
     end
   end
