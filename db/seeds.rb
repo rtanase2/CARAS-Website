@@ -7,6 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # ==================================================
+# EVENT SEEDS
+# ==================================================
+
+# ======================================
+# TAMALE FESTIVAL
+# ======================================
+
+Event.create(name: "Tamale Festival", path: "tamale-fest?lang=en",
+             language: "en")
+
+Event.create(name: "Festival Del Tamal", path: "tamale-fest?lang=es",
+             language: "es")
+
+# ==================================================
 # PAGE SEEDS
 # ==================================================
 
