@@ -26,7 +26,25 @@ $(document).ready(function(){
         tabContainer.append("</tr></table>");
         break;
       case "registration":
-        tabContainer.append("<p>registration</p>");
+        tabContainer.append("<h1>Registration</h1>");
+        //Vendors
+        tabContainer.append("<h2>Vendors</h2>");
+        tabContainer.append(" <a href=\"PDFs/TFF_Booth_Construction.pdf\" target=\"_blank\">Booth Construction Form</a>");
+        tabContainer.append(" <a href=\"PDFs/TFF_Application.pdf\" target=\"_blank\">Temporary Food Facility Application</a>");
+        tabContainer.append(" <a href=\"PDFs/TE_Self_Checklist.pdf\" target=\"_blank\">Booth Checklist</a>");
+
+        //Volunteers
+        tabContainer.append("<h2>Volunteers</h2>");
+        tabContainer.append(" <a href=\"PDFs/CARASLiabilityReleaseForm.pdf\" target=\"_blank\">Booth Checklist</a>");
+        tabContainer.append(" <a href=\"PDFs/CARASVolunteerIntake.pdf\" target=\"_blank\">CARAS Vendor Application</a>");
+
+        //Car Show
+        tabContainer.append("<h2>Car Show</h2>");
+        tabContainer.append(" <a href=\"PDFs/2nd Anniual Tamale Carshow Registration Final (3) 2.pdf\" target=\"_blank\">Carshow Registration Form</a>");
+        
+        //Tamale Cook Off
+        tabContainer.append("<h2>Tamale Cook Off</h2>");
+        tabContainer.append(" <a href=\"PDFs/TAMALE FESTIVAL CONTEST English.pdf\" target=\"_blank\">Tamale Cook Off Registration Form</a>");
         break;
       case "entertainment":
         tabContainer.append("<p>entertainment</p>");
