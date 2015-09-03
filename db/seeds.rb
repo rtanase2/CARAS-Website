@@ -151,7 +151,7 @@ Page.create(innerHTML:
 <body>
 <div class=\"jumbotron\" style=\"margin-bottom: 0; background-image: url(flag.jpg);\">
   <div>
-    <h1>Donate</h1>
+    <h1 style=\"color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\">Donate</h1>
   </div>
 </div>
 
@@ -159,7 +159,7 @@ Page.create(innerHTML:
 <p style=\"font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px\">Photo by <a style=\"padding-left: 0\" href=\"https://www.flickr.com/photos/ivangm/\" target=\"_blank\">ivangm</a>. License can be found <a style=\"padding-left: 0\" href=\"https://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">here</a>.</p>
 
 <div class=\"container\">
-    <div class=\"row\">
+    <div class=\"row\" align=\"center\">
   <p>If you would like to support our agency, please click the button below to proceed to Paypal.</p>
     <form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">
 <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">
@@ -178,14 +178,14 @@ Page.create(innerHTML: "
 <body>
 <div class=\"jumbotron\" style=\"margin-bottom: 0; background-image: url(flag.jpg);\">
   <div>
-    <h1>Donar</h1>
+    <h1 style=\"color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\">Donar</h1>
   </div>
 </div>
 
 <p style=\"font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px\">Photo by <a style=\"padding-left: 0\" href=\"https://www.flickr.com/photos/ivangm/\" target=\"_blank\">ivangm</a>. License can be found <a style=\"padding-left: 0\" href=\"https://creativecommons.org/licenses/by/2.0/\" target=\"_blank\">here</a>.</p>
 
 <div class=\"container\">
-    <div class=\"row\">
+    <div class=\"row\" align=\"center\">
     <form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">
 <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">
 <input type=\"hidden\" name=\"hosted_button_id\" value=\"PJP6LNBVX2HPE\">
