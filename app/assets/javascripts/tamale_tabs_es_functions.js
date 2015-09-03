@@ -27,6 +27,8 @@ $(document).ready(function(){
         break;
       case "registration":
         tabContainer.append("<h1>Registration</h1>");
+        tabContainer.append("<p>Please download and fill out the forms below and email them to rarmendariz@carassouthcounty.org, or bring them in to the office located at 7365 Monterey Rd Gilroy, CA 95020.</p>")
+
         tabContainer.append("<h2>Vendors</h2>");
         tabContainer.append(" <a href=\"PDFs/TFF_Booth_Construction.pdf\" target=\"_blank\">Booth Construction Form</a>");
         tabContainer.append(" <a href=\"PDFs/TFF_Application.pdf\" target=\"_blank\">Temporary Food Facility Application</a>");
@@ -39,6 +41,7 @@ $(document).ready(function(){
 
         tabContainer.append("<h2>Car Show</h2>");
         tabContainer.append(" <a href=\"PDFs/2nd Anniual Tamale Carshow Registration Final (3) 2.pdf\" target=\"_blank\">Car Show Registration Form</a>");
+
 
         tabContainer.append("<h2>Tamale Cook Off</h2>");
         tabContainer.append(" <a href=\"PDFs/TAMALE FESTIVAL CONTEST Spanish.pdf\" target=\"_blank\">Tamale Cook Off Registration Form</a>");

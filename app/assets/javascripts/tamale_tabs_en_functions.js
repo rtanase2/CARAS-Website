@@ -27,6 +27,7 @@ $(document).ready(function(){
         break;
       case "registration":
         tabContainer.append("<h1>Registration</h1>");
+        tabContainer.append("<p>Please download and fill out the forms below and email them to rarmendariz@carassouthcounty.org, or bring them in to the office located at 7365 Monterey Rd Gilroy, CA 95020.</p>")
         //Vendors
         tabContainer.append("<h2>Vendors</h2>");
         tabContainer.append(" <a href=\"PDFs/TFF_Booth_Construction.pdf\" target=\"_blank\">Booth Construction Form</a>");
