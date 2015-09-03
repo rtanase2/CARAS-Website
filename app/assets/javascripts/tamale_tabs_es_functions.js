@@ -18,7 +18,7 @@ $(document).ready(function(){
         tabContainer.append("<h3><b>Date:</b> Sunday, September 27, 2015</h3><h3><b>Time:</b> 12:00 - 7:00 PM</h3>");
         tabContainer.append("<h3><b>Location:</b> Monterey Road between 3rd Street and 6th Street</h3>");
         break;
-      case "sponsors": 
+      case "sponsors":
         tabContainer.append("<h1 style=\"text-align: center\">Sponsors</h1>");
         tabContainer.append("<table><tr>");
         tabContainer.append("<td><p><img width = \"150px\" src=\"caras-logo-transparent.png\"></img></p></td>");
