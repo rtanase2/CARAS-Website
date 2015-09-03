@@ -19,7 +19,11 @@ $(document).ready(function(){
         tabContainer.append("<h3><b>Location:</b> Monterey Road between 3rd Street and 6th Street</h3>");
         break;
       case "sponsors":
-        tabContainer.append("<p>sponsors</p>");
+        tabContainer.append("<h1 style=\"text-align: center\">Sponsors</h1>");
+        tabContainer.append("<table><tr>");
+        tabContainer.append("<td><p><img width = \"150px\" src=\"caras-logo-transparent.png\"></img></p></td>");
+        tabContainer.append("<td><p><img width = \"150px\" src= \"El Charrito logo.png\"></img></p></td> ");
+        tabContainer.append("</tr></table>");
         break;
       case "registration":
         tabContainer.append("<p>registration</p>");

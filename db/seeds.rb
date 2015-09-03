@@ -279,7 +279,7 @@ Page.create(innerHTML:
       <ul class=\"nav nav-tabs\">
         <li role=\"presentation\" class=\"active\"><a id=\"description\" >Description</a></li>
         <li role=\"presentation\"><a id=\"sponsors\">Sponsors</a></li>
-        <li role=\"presentation\"><a id=\"entertainment\">Entertainment and Vendors</a></li>
+        <!-- <li role=\"presentation\"><a id=\"entertainment\">Entertainment and Vendors</a></li> -->
         <li role=\"presentation\"><a id=\"registration\">Contest and Vendor Registration</a></li>
       </ul>
       <div id=\"tab-container\"></div>
@@ -297,11 +297,11 @@ Page.create(innerHTML:
     <div class=\"jumbotron\" style=\"margin-bottom: 0; background-image: url(tamale_header_1.jpg);\">
       <div>
         <h1 style=\"color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\">Festival del Tamal</h1>
-        <p style=\"color:white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\">SPANISHBrought to you SPANISHby CARAS and ElSPANISH Charrito Market</p>
+        <p style=\"color:white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;\">Brought to you by CARAS and El Charrito Market</p>
       </div>
     </div>
 
-    <p style=\"font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px\">PhotoSPANISH by <a style=\"padding-left: 0\" href=\"https://www.flickr.com/photos/shaynabright/\" target=\"_blank\">shaynabright</a>. License SPANISHcan be found <a style=\"padding-left: 0\" href=\"https://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">here</a>.</p>
+    <p style=\"font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px\">Photo by <a style=\"padding-left: 0\" href=\"https://www.flickr.com/photos/shaynabright/\" target=\"_blank\">shaynabright</a>. License can be found <a style=\"padding-left: 0\" href=\"https://creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">here</a>.</p>
 
     <div class=\"container\">
         <div class=\"row\">
@@ -311,10 +311,10 @@ Page.create(innerHTML:
           </ol>
 
           <ul class=\"nav nav-tabs\">
-            <li role=\"presentation\" class=\"active\"><a id=\"description\" >Description SPANISH</a></li>
-            <li role=\"presentation\"><a id=\"sponsors\">Sponsors SPANISH</a></li>
-            <li role=\"presentation\"><a id=\"entertainment\">Entertainment and Vendors SPANISH</a></li>
-            <li role=\"presentation\"><a id=\"registration\">Contest and Vendor Registration SPANISH</a></li>
+            <li role=\"presentation\" class=\"active\"><a id=\"description\" >Description</a></li>
+            <li role=\"presentation\"><a id=\"sponsors\">Sponsors</a></li>
+            <!-- <li role=\"presentation\"><a id=\"entertainment\">Entertainment and Vendors</a></li>-->
+            <li role=\"presentation\"><a id=\"registration\">Contest and Vendor Registration</a></li>
           </ul>
           <div id=\"tab-container\"></div>
         </div>
