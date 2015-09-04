@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(version: 20150829191139) do
     t.time     "time_end_fri"
     t.time     "time_start_sat"
     t.time     "time_end_sat"
+    t.boolean  "minor"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

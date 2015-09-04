@@ -1,11 +1,18 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <title>CARAS | Volunteer Registration</title>
 </head>
 
 <body>    
-    <h1>Volunteer</h1>
+    <div class="jumbotron">
+		<div>
+			<h1>Volunteer</h1>
+		</div>
+	</div>
 
-    <%= form_for :volunteer do |f| %>
+    <%= form_for(:volunteer, html: {name: "volunteerForm"}) do |f| %>
         <p>
             <%= f.label :name %><br>
             <%= f.text_field :name %>
@@ -186,25 +193,82 @@
             <%= f.text_field :event %>
         </p>
         
+		<!-- Terms -->
+		
+		<div style="width:600px;height:50px;line-height:1em;overflow:auto;padding:5px">
+			I understand that participation in the above Activity or Event may be hazardous for the above-named participant.<br>
+			In signing below, I assume risk of harm or injury which may occur to the participant as a result of participating in the above-named event or activity. I hereby release Community Agency for Resources, Advocacy and Services,
+			CARAS 8545 Monterey Road #A, Gilroy, CA and its officers, employees, or agents from any liability costs and damages resulting in this individual's participation.
+		</div>
+		
+		<!-- End Terms -->
+		
         <p>
-            <%= check_box("volunteer", "signed_participant", {}, true, false) %>
-            <%= f.label(:parent_name, "By check this box, I (the participant), authorize that I would like to volunteer at CARAS.") %>
+            <%= check_box("volunteer", "signed_participant", {onclick: 'checkBox()'}, true, false) %>
+            <%= f.label(:parent_name, "By check this box, I (the participant), authorize that I would like to volunteer at CARAS and have read the above terms.") %>
         </p>
+		
+		<!--
+			Trying to add collapse-ability to the form. Rails isn't liking it apparently.
+		
+		<p>
+			<%= check_box("volunteer", "minor", { html: { data-toggle: 'minorTerms' } }, true, false) %>
+			<%= f.label(:minor, "Is the participant a minor?") %>
+		</p>
+		
+		-->
+		
+		<!--
+		
+		<div id="minorTerms" class="collapse">
+		
+		-->
+			<!-- Minor terms -->
+			
+			<div style="width:600px;height:50px;line-height:1em;overflow:auto;padding:5px">
+				I agree that the minor has my consent to participate in the event or activity.<br>
+				I also give my consent for the business or organization to seek emergency treatment for the minor if necessary, and I agree to accept financial responsibility for the costs related to this emergency treatment.
+			</div>
+			
+			<!-- End Minor Terms -->
+			
+			<p>
+				<%= check_box("volunteer", "signed_parent", {}, true, false) %>
+				<%= f.label(:parent_name, "By check this box, I (the gaurdian), authorize that my child can volunteer with CARAS and have read the terms above.") %>
+			</p>
+			
+			<p>
+				<%= f.label :parent_name %><br>
+				<%= f.text_field :parent_name %>
+			</p>
+
+		<!--
+		
+		</div>
+
+		-->
         
         <p>
-            <%= f.label :parent_name %><br>
-            <%= f.text_field :parent_name %>
-        </p>
-        
-        <p>
-            <%= check_box("volunteer", "signed_parent", {}, true, false) %>
-            <%= f.label(:parent_name, "By check this box, I (the gaurdian), authorize that my child can volunteer with CARAS.") %>
-        </p>
-        
-        <p>
-            <%= f.submit :submit %>
+            <button type="submit" name="commit" value="Submit" disabled>Submit</button>
         </p>
     <% end %>
+	
+	<!-- Javascript for checkbox -->
+	<script>
+	function checkBox(){
+		if (document.getElementById("volunteer_signed_participant").checked){
+		
+			//TODO
+			//Make submit button clickable after check box has been ticked.
+			//May require more checks incase user is a minor.
+			document.volunteerForm.commit.disabled = false;
+			
+		}
+		else{
+			document.volunteerForm.commit.disabled = true;
+		}
+	}
+	</script>
 
         
 <%= render file: "layouts/footer"%>

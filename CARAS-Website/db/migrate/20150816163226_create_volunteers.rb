@@ -43,6 +43,7 @@ class CreateVolunteers < ActiveRecord::Migration
 	  t.time :time_end_fri
 	  t.time :time_start_sat
 	  t.time :time_end_sat
+	  t.boolean :minor
       t.timestamps null: false
     end
   end
