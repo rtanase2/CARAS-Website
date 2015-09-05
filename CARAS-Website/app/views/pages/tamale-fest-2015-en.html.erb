@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CARAS | Second Annual Tamale Festival</title>
+  <%= javascript_include_tag 'tamale_tabs_en_functions', 'data-turbolinks-track' => true %>
+</head>
+
+<body>
+<%= render file: "layouts/navbar_en"%>
+<div class="jumbotron" style="margin-bottom: 0; background-image: url(tamale_header_1.jpg);">
+  <div>
+    <h1 style="color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Second Annual Tamale Festival</h1>
+    <p style="color:white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Brought to you by CARAS and El Charrito Market</p>
+  </div>
+</div>
+
+<p style="font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px">Photo by <a style="padding-left: 0" href="https://www.flickr.com/photos/shaynabright/" target="_blank">shaynabright</a>. License can be found <a style="padding-left: 0" href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">here</a>.</p>
+
+<div class="container">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a style="padding-left: 0;" href="events-en">Events</a></li>
+        <li class="active"><a style="padding-left: 0;" href="#">Second Annual Tamale Festival</a></li>
+      </ol>
+
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#" id="description" >Description</a></li>
+        <li role="presentation"><a href="#" id="sponsors">Sponsors</a></li>
+        <li role="presentation"><a href="#" id="entertainment">Entertainment and Vendors</a></li>
+        <li role="presentation"><a href="#" id="registration">Contest and Vendor Registration</a></li>
+      </ul>
+      <div id="tab-container"></div>
+    </div>
+</div>
+
+<%= render file: "layouts/footer" %>
+
+</body>
+
+</html>
