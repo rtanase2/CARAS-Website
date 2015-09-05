@@ -4,10 +4,14 @@ class PagesController < ApplicationController
 			params[:lang] = 'en'
 		end
 
-		if valid_page?
-			render template: "pages/#{params[:page].downcase}-#{params[:lang]}"
-		else 
-			render file: "public/404.html", status: :not_found
+		if params[:page] == "tamale-fest"
+			render template: "pages/tamale-fest"
+		else
+			if valid_page?
+				render template: "pages/#{params[:page].downcase}-#{params[:lang]}"
+			else 
+				render file: "public/404.html", status: :not_found
+			end
 		end
 	end
 
