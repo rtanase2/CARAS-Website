@@ -4,13 +4,6 @@ class PagesController < ApplicationController
 			params[:lang] = 'en'
 		end
 
-		@page;
-		for page in Page.all
-			if params[:page].downcase == page.pageType and params[:lang] == page.lang
-				@page = page
-			end
-		end
-
 		if valid_page?
 			render template: "pages/#{params[:page]}-#{params[:lang]}"
 		else 
