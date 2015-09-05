@@ -4,13 +4,15 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.text :name
       t.text :description
+      t.text :subheader
       t.date :date
       t.string :street_address
       t.string :city
       t.string :zip_code
       t.string :state
-      t.string :path
       t.string :language
+      t.string :tabs
+      t.string :event_type
       t.timestamps null: false
     end
   end

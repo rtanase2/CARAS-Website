@@ -13,7 +13,6 @@ $(document).ready(function(){
 });
 
 function fillInEventsDropdown(lang){
-
 }
 
 function fillInOptionsText(lang){

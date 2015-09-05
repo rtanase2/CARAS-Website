@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829191139) do
+ActiveRecord::Schema.define(version: 20150816163317) do
 
   create_table "car_show_participants", force: :cascade do |t|
     t.boolean  "paid"
@@ -48,21 +48,17 @@ ActiveRecord::Schema.define(version: 20150829191139) do
   create_table "events", force: :cascade do |t|
     t.text     "name"
     t.text     "description"
+    t.text     "subheader"
     t.date     "date"
     t.string   "street_address"
     t.string   "city"
     t.string   "zip_code"
     t.string   "state"
-    t.string   "path"
     t.string   "language"
+    t.string   "tabs"
+    t.string   "event_type"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "pages", force: :cascade do |t|
-    t.text   "innerHTML"
-    t.string "lang"
-    t.string "pageType"
   end
 
   create_table "sponsors", force: :cascade do |t|
