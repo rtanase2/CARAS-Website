@@ -7,13 +7,9 @@ $(document).ready(function(){
 	var currLanguage = 
 	           ((language.slice(0, 2).toLowerCase() === 'en') ?
 							'es' : 'en');
-	setActiveSelection();
 	fillInOptionsText(currLanguage);
-	fillInEventsDropdown(currLanguage);
+	setActiveSelection(currPath);
 });
-
-function fillInEventsDropdown(lang){
-}
 
 function fillInOptionsText(lang){
 	var tabText;
@@ -39,37 +35,28 @@ function fillInOptionsText(lang){
 	}	
 }
 
-function setActiveSelection(){
-	var activeTabIndex = findActiveSelection();
+function setActiveSelection(currPath){
+	var activeTabIndex = findActiveSelection(currPath);
 	var activeTab = $($('.nav-option')[activeTabIndex]);
 	activeTab.addClass("active");
 	activeTab.append("<span class=\"sr-only\">(current)</span>");
 }
 
-function findActiveSelection(){
-	var title = $('title').text();
-	title = title.replace("CARAS | ", "").toLowerCase();
-
-	switch(title){
-		case "misión":
-		case "about us":
-			return(0);
-		case "aser contacto con nosotros":
-		case "contact us":
-			return(1);
-		case "voluntario":
-		case "volunteer":
-			return(3);
-		case "galería":
-		case "gallery":
-			return(4);
-		case "conocer al equipo":
-		case "meet the team":
-			return(5);
-		case "donar":
-		case "donate":
-			return(6);
-		default:
-			return(2);
+function findActiveSelection(currPath){
+	// UNCOMMENT WHEN ALL OPTIONS ARE AVAILABLE options = ["about-us", "contact-us", "volunteer", "gallery", "meet-the-team", "donate"];
+	options = ["about-us", "contact-us", "volunteer", "donate"];
+	options = options.map(function(e) { return currPath.indexOf(e)});
+	i = options.indexOf(options.filter(function(e) {return e > -1})[0]);
+	console.log("=====================");
+	console.log(options);
+	console.log(i);
+	console.log(options.filter(function(e) {return e > -1}));
+	console.log("=====================");
+	if (i == -1){
+		return 2;
+	} else if (i >= 2) {
+		return i + 1;
+	} else {
+		return i;
 	}
 }
