@@ -113,4 +113,5 @@ function generateDescriptionContent(e){
   tabContainer.append("<h3><b>Location:</b> " + e.street_address + ", " + 
                       e.city + ", " + e.state + " " + e.zip_code 
                       + "</h3>");
+  tabContainer.append("<p>" + e.description + "</p>")
 }
