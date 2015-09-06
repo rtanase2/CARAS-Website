@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row">
           <ol class="breadcrumb">
-            <li><a style="padding-left: 0;" href=<%= "events-" << params[:lang]%>> <%= event.language == "en" ? "Events" : "Eventos" %></a></li>
-            <li class="active"><a style="padding-left: 0;"><%= event.event_name %></a></li>
+            <li><%= event.language == "en" ? "Events" : "Eventos" %></li>
+            <li><%= event.event_name %></li>
           </ol>
 
           <ul class="nav nav-tabs">
