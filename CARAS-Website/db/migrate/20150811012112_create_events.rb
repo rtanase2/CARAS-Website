@@ -5,8 +5,9 @@ class CreateEvents < ActiveRecord::Migration
       t.text :name
       t.text :description
       t.text :subheader
-      t.datetime :start_date
-      t.datetime :end_date
+      t.date :date
+      t.time :start_time
+      t.time :end_time
       t.string :street_address
       t.string :city
       t.string :zip_code
