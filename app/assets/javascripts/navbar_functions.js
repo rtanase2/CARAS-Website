@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	updateNav();
-});
+$(document).ready(updateNav);
 
 $(document).on('page:load', updateNav);
 
@@ -9,7 +7,7 @@ function updateNav(){
 	var currLang = currPath.slice(-2);
 	var hasLangParam = currPath.indexOf("lang") != -1;
 	var pageInSpanish = currLang === 'es';
-	var language = ((hasLangParam && pageInSpanish) ? "en" : "es");
+	var language = ((hasLangParam && pageInSpanish) ? "es" : "en");
 	fillInOptionsText(language);
 	setActiveSelection(currPath);
 }
