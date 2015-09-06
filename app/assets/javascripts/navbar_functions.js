@@ -1,16 +1,18 @@
 $(document).ready(function(){
+	updateNav();
+});
+
+$(document).on('page:load', updateNav);
+
+function updateNav(){
 	var currPath = window.location.href;
-	console.log(currPath);
 	var currLang = currPath.slice(-2);
 	var hasLangParam = currPath.indexOf("lang") != -1;
 	var pageInSpanish = currLang === 'es';
-	var language = ((hasLangParam && pageInSpanish) ? "English?" : "Espanol?");
-	var currLanguage = 
-	           ((language.slice(0, 2).toLowerCase() === 'en') ?
-							'es' : 'en');
-	fillInOptionsText(currLanguage);
+	var language = ((hasLangParam && pageInSpanish) ? "en" : "es");
+	fillInOptionsText(language);
 	setActiveSelection(currPath);
-});
+}
 
 function fillInOptionsText(lang){
 	var tabText;

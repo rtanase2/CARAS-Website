@@ -4,7 +4,6 @@ class PagesController < ApplicationController
 			params[:lang] = 'en'
 		end
 
-
 		if valid_page?
 			render template: "pages/#{params[:page].downcase}-#{params[:lang]}"
 		else 
