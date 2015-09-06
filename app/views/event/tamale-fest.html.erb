@@ -5,7 +5,7 @@
     <% event = Event.where(:event_type => params[:event].downcase).where(:language => params[:lang].downcase)[0] %>
     <%= content_tag("div", nil, :id => 'invisible', :data => {:event => event, :lang => params[:lang], :sponsors => Sponsor.all})%>
     <title> <%= event.event_name %> </title>
-    <%= javascript_include_tag 'tamale_fest_functions', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag  params[:event].to_s.gsub!('-', '_') << '_functions', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
