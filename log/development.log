@@ -1901,3 +1901,255 @@ LoadError (cannot load such file -- C:/Users/wc_ka/Desktop/CARAS-Website/config/
   Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
   Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
   Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (83.8ms)
+  [1m[36m (128.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (108.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20150811012112)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" text, "description" text, "subheader" text, "date" date, "start_time" time, "end_time" time, "sponsors" varchar, "entertainment" varchar, "street_address" varchar, "city" varchar, "zip_code" varchar, "state" varchar, "language" varchar, "tabs" varchar, "event_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150811012112"]]
+  [1m[35m (84.0ms)[0m  commit transaction
+Migrating to CreateVendors (20150816163047)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "business_name" varchar, "owner_name" varchar, "owner_street_address" varchar, "owner_city" varchar, "owner_zip" varchar, "business_home_number" varchar, "cell_number" varchar, "email" varchar, "food_service_time" time, "facility_type" varchar, "permit_types" varchar, "food_prep_start" time, "name_of_temp_facility" varchar, "person_in_charge" varchar, "person_in_charge_cell" varchar, "covering_type" varchar, "flooring_type" varchar, "wall_type" varchar, "booth_supplier" varchar, "app_sign" varchar, "app_sign_date" date, "comm_kitch" varchar, "comm_kitch_address" varchar, "comm_kitch_phone" varchar, "comm_kitch_times_used" varchar, "valid_health_permit" boolean, "facility_number" varchar, "facility_outside_scc" boolean, "health_permit_link" varchar, "name_permit_holder" varchar, "comm_kitch_signature" varchar, "comm_kitch_sign_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163047"]]
+  [1m[35m (104.0ms)[0m  commit transaction
+Migrating to CreateSponsors (20150816163117)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "sponsors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "logo_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163117"]]
+  [1m[35m (104.0ms)[0m  commit transaction
+Migrating to CreateEntertainers (20150816163157)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (12.0ms)[0m  CREATE TABLE "entertainers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "time_playing" time, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163157"]]
+  [1m[35m (112.0ms)[0m  commit transaction
+Migrating to CreateVolunteers (20150816163226)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "volunteers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "city" varchar, "zip" varchar, "phone" varchar, "age" varchar, "volunteer_in_school" boolean, "school_name" varchar, "school_phone" varchar, "start_date" date, "available_days" boolean, "available_mornings" boolean, "available_evenings" boolean, "availability_by_day" text, "type_of_service" varchar, "name_org" varchar, "event" varchar, "signed_participant" boolean, "parent_name" varchar, "signed_parent" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163226"]]
+  [1m[35m (96.0ms)[0m  commit transaction
+Migrating to CreateCarShowParticipants (20150816163251)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "car_show_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "paid" boolean, "name" varchar, "address" varchar, "email" varchar, "year" varchar, "make" varchar, "signed" boolean, "submission_time" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163251"]]
+  [1m[35m (88.0ms)[0m  commit transaction
+Migrating to CreateCookOffParticipants (20150816163317)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (12.0ms)[0m  CREATE TABLE "cook_off_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "region_of_tamale" varchar, "name" varchar, "fillings_ingredients" text, "company_org" varchar, "contact_person" varchar, "phone_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163317"]]
+  [1m[35m (97.5ms)[0m  commit transaction
+Migrating to CreatePages (20150829191139)
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (20.0ms)[0m  CREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "innerHTML" text, "lang" varchar, "pageType" varchar) 
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150829191139"]]
+  [1m[35m (107.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (120.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (152.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20150811012112)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (11.9ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" text, "description" text, "subheader" text, "date" date, "start_time" time, "end_time" time, "sponsors" varchar, "entertainment" varchar, "street_address" varchar, "city" varchar, "zip_code" varchar, "state" varchar, "language" varchar, "tabs" varchar, "event_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150811012112"]]
+  [1m[35m (108.0ms)[0m  commit transaction
+Migrating to CreateVendors (20150816163047)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "business_name" varchar, "owner_name" varchar, "owner_street_address" varchar, "owner_city" varchar, "owner_zip" varchar, "business_home_number" varchar, "cell_number" varchar, "email" varchar, "food_service_time" time, "facility_type" varchar, "permit_types" varchar, "food_prep_start" time, "name_of_temp_facility" varchar, "person_in_charge" varchar, "person_in_charge_cell" varchar, "covering_type" varchar, "flooring_type" varchar, "wall_type" varchar, "booth_supplier" varchar, "app_sign" varchar, "app_sign_date" date, "comm_kitch" varchar, "comm_kitch_address" varchar, "comm_kitch_phone" varchar, "comm_kitch_times_used" varchar, "valid_health_permit" boolean, "facility_number" varchar, "facility_outside_scc" boolean, "health_permit_link" varchar, "name_permit_holder" varchar, "comm_kitch_signature" varchar, "comm_kitch_sign_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163047"]]
+  [1m[35m (100.0ms)[0m  commit transaction
+Migrating to CreateSponsors (20150816163117)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "sponsors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "logo_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163117"]]
+  [1m[35m (88.0ms)[0m  commit transaction
+Migrating to CreateEntertainers (20150816163157)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (8.0ms)[0m  CREATE TABLE "entertainers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "time_playing" time, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163157"]]
+  [1m[35m (108.0ms)[0m  commit transaction
+Migrating to CreateVolunteers (20150816163226)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (12.0ms)[0m  CREATE TABLE "volunteers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "city" varchar, "zip" varchar, "phone" varchar, "age" varchar, "volunteer_in_school" boolean, "school_name" varchar, "school_phone" varchar, "start_date" date, "available_days" boolean, "available_mornings" boolean, "available_evenings" boolean, "availability_by_day" text, "type_of_service" varchar, "name_org" varchar, "event" varchar, "signed_participant" boolean, "parent_name" varchar, "signed_parent" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163226"]]
+  [1m[35m (100.0ms)[0m  commit transaction
+Migrating to CreateCarShowParticipants (20150816163251)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "car_show_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "paid" boolean, "name" varchar, "address" varchar, "email" varchar, "year" varchar, "make" varchar, "signed" boolean, "submission_time" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163251"]]
+  [1m[35m (112.0ms)[0m  commit transaction
+Migrating to CreateCookOffParticipants (20150816163317)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "cook_off_participants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "region_of_tamale" varchar, "name" varchar, "fillings_ingredients" text, "company_org" varchar, "contact_person" varchar, "phone_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150816163317"]]
+  [1m[35m (112.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO "events" ("event_name", "description", "subheader", "date", "start_time", "end_time", "street_address", "city", "zip_code", "sponsors", "entertainment", "state", "language", "tabs", "event_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["event_name", "Second Annual Tamale Festival"], ["description", "Fun for the whole family! We are featuring an number of tamale vendors from different origins that you can purchase as well as providing entertainment thorughout the day. There will be dancers, a car show, a tamale cook off, musical performances and much more! Don't miss this great event!"], ["subheader", "Brought to you by CARAS and El Charrito Market"], ["date", "2015-09-27"], ["start_time", "2015-09-27 12:00:00.000000"], ["end_time", "2015-09-27 19:00:00.000000"], ["street_address", "Monterey St. between 3rd and 5th St."], ["city", "Gilroy"], ["zip_code", "95020"], ["sponsors", "---\n- '0'\n- '1'\n"], ["entertainment", "[]"], ["state", "CA"], ["language", "en"], ["tabs", "---\n- Description\n- Sponsors\n- Entertainment and Vendors\n- Registration\n"], ["event_type", "tamale-fest"], ["created_at", "2015-09-06 18:21:46.680988"], ["updated_at", "2015-09-06 18:21:46.680988"]]
+  [1m[35m (92.0ms)[0m  commit transaction
+  [1m[36m (4.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "events" ("event_name", "subheader", "description", "date", "start_time", "end_time", "street_address", "city", "zip_code", "sponsors", "entertainment", "state", "language", "tabs", "event_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["event_name", "Segundo Festival del Tamal"], ["subheader", "GET SUBHEADER"], ["description", "GET CONTENT!"], ["date", "2015-09-27"], ["start_time", "2015-09-27 12:00:00.000000"], ["end_time", "2015-09-27 19:00:00.000000"], ["street_address", "Monterey St. between 3rd and 5th St."], ["city", "Gilroy"], ["zip_code", "95020"], ["sponsors", "---\n- '0'\n- '1'\n"], ["entertainment", "[]"], ["state", "CA"], ["language", "es"], ["tabs", "---\n- Descripción\n- Esponsor\n- Entretenimiento y Vendedores\n- Registro\n"], ["event_type", "tamale-fest"], ["created_at", "2015-09-06 18:21:46.800996"], ["updated_at", "2015-09-06 18:21:46.800996"]]
+  [1m[36m (92.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "sponsors" ("name", "logo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "CARAS"], ["logo_url", "caras-logo-transparent.png"], ["created_at", "2015-09-06 18:21:46.921007"], ["updated_at", "2015-09-06 18:21:46.921007"]]
+  [1m[35m (88.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.0ms)[0m  INSERT INTO "sponsors" ("name", "logo_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "El Charrito Market"], ["logo_url", "El Charrito logo.png"], ["created_at", "2015-09-06 18:21:47.013010"], ["updated_at", "2015-09-06 18:21:47.013010"]]
+  [1m[36m (92.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/events/tamale-fest?lang=en" for ::1 at 2015-09-06 11:21:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"en", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "en"]]
+  [1m[36mSponsor Load (0.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (28.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (349.1ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "en"]]
+  Rendered layouts/navbar.html.erb (80.0ms)
+Completed 200 OK in 1414ms (Views: 1397.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/navbar_functions.self-f304c1522c3801103881b23057e67218fa47c3193c47900fe3c4743d917f290a.js?body=1" for ::1 at 2015-09-06 11:22:01 -0700
+
+
+Started GET "/PDFs/TAMALE%20FESTIVAL%20CONTEST%20english.pdf" for ::1 at 2015-09-06 11:22:19 -0700
+
+ActionController::RoutingError (No route matches [GET] "/PDFs/TAMALE%20FESTIVAL%20CONTEST%20english.pdf"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/Ruby21-x64/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  C:/Ruby21-x64/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  C:/Ruby21-x64/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (28.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.6ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (33.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (72.1ms)
+
+
+Started GET "/events/tamale-fest?lang=en" for ::1 at 2015-09-06 11:22:50 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"en", "event"=>"tamale-fest"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?[0m  [["event_type", "tamale-fest"], ["language", "en"]]
+  [1m[35mSponsor Load (0.0ms)[0m  SELECT "sponsors".* FROM "sponsors"
+  Rendered layouts/footer.html.erb (12.5ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (40.4ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "en"]]
+  Rendered layouts/navbar.html.erb (11.5ms)
+Completed 200 OK in 250ms (Views: 250.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 11:23:14 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[36mSponsor Load (0.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (8.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (32.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (16.0ms)
+Completed 200 OK in 232ms (Views: 232.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact-us?lang=es" for ::1 at 2015-09-06 11:23:23 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"contact-us"}
+  Rendered layouts/footer.html.erb (12.0ms)
+  Rendered pages/contact-us-es.html.erb within layouts/application (32.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 232ms (Views: 228.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about-us?lang=es" for ::1 at 2015-09-06 11:23:24 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"about-us"}
+  Rendered layouts/footer.html.erb (12.0ms)
+  Rendered pages/about-us-es.html.erb within layouts/application (12.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (16.0ms)
+Completed 200 OK in 264ms (Views: 264.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteer?lang=es" for ::1 at 2015-09-06 11:23:27 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"volunteer"}
+  Rendered layouts/footer.html.erb (12.0ms)
+  Rendered pages/volunteer-es.html.erb within layouts/application (12.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (16.0ms)
+Completed 200 OK in 208ms (Views: 208.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/donate?lang=es" for ::1 at 2015-09-06 11:23:29 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"donate"}
+  Rendered layouts/footer.html.erb (16.0ms)
+  Rendered pages/donate-es.html.erb within layouts/application (16.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 300ms (Views: 296.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteer?lang=es" for ::1 at 2015-09-06 11:23:30 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"volunteer"}
+  Rendered layouts/footer.html.erb (12.0ms)
+  Rendered pages/volunteer-es.html.erb within layouts/application (12.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 200ms (Views: 200.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact-us?lang=es" for ::1 at 2015-09-06 11:23:30 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"contact-us"}
+  Rendered layouts/footer.html.erb (24.0ms)
+  Rendered pages/contact-us-es.html.erb within layouts/application (44.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 392ms (Views: 388.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about-us?lang=es" for ::1 at 2015-09-06 11:23:31 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"about-us"}
+  Rendered layouts/footer.html.erb (16.0ms)
+  Rendered pages/about-us-es.html.erb within layouts/application (16.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 304ms (Views: 303.9ms | ActiveRecord: 0.0ms)
