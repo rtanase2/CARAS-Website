@@ -50,7 +50,10 @@ function findActiveSelection(currPath){
 	options = options.map(function(e) { return currPath.indexOf(e)});
 	i = options.indexOf(options.filter(function(e) {return e > -1})[0]);
 	if (i == -1){
-		return 2;
+		if(window.location.pathname == "/")
+			return 0
+		else
+			return 2;
 	} else if (i >= 2) {
 		return i + 1;
 	} else {
