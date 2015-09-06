@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(version: 20150816163317) do
 
   create_table "events", force: :cascade do |t|
     t.text     "event_name"
+    t.text     "jumbotron_img"
+    t.text     "img_takers_url"
+    t.text     "img_takers_name"
+    t.text     "img_license_url"
     t.text     "description"
     t.text     "subheader"
     t.date     "date"
@@ -61,8 +65,8 @@ ActiveRecord::Schema.define(version: 20150816163317) do
     t.string   "language"
     t.string   "tabs"
     t.string   "event_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "sponsors", force: :cascade do |t|

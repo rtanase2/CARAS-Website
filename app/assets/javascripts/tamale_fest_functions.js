@@ -146,10 +146,10 @@ function generateDescriptionContent(e){
   } else {
     endTime = endTime.slice(0, 2)%12 + endTime.slice(2) + "PM"
   }
-  tabContainer.append("<h3><b>Date:</b> " + formattedDate + 
-                      "</h3><h3><b>Time:</b> " + startTime +  " - " + 
+  tabContainer.append("<h3><b>" + (e.language == "en" ? "Date: " : "Fetcha: ") + "</b> " + formattedDate + 
+                      "</h3><h3><b>" + (e.language == "en" ? "Time: " : "Horas: ") + "</b> " + startTime +  " - " + 
                       endTime + "</h3>");
-  tabContainer.append("<h3><b>Location:</b> " + e.street_address + ", " + 
+  tabContainer.append("<h3><b>" + (e.language == "en" ? "Locatoin: " : "Lugar: ") + "</b> " + e.street_address + ", " + 
                       e.city + ", " + e.state + " " + e.zip_code 
                       + "</h3>");
   tabContainer.append("<p>" + e.description + "</p>")

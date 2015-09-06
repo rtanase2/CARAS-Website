@@ -2,6 +2,10 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.text :event_name
+      t.text :jumbotron_img
+      t.text :img_takers_url
+      t.text :img_takers_name
+      t.text :img_license_url
       t.text :description
       t.text :subheader
       t.date :date
