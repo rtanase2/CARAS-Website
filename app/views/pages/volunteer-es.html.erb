@@ -6,6 +6,24 @@
 </head>
 
 <body>
+    <div class="jumbotron" style="margin-bottom: 0; background-image: url(temple_jumbotron_img.jpg);">
+        <div>
+            <h1 style="color: black;  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;">Voluntario</h1>
+        </div>
+    </div>
+    
+    <p style="font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px">Photo by <a style="padding-left: 0" href="https://www.flickr.com/photos/celso/" target="_blank">Celso FLORES</a>. License can be found <a style="padding-left: 0" href="https://creativecommons.org/licenses/by/2.0/" target="_blank">here</a>. Modifications: Cropped photo.</p>
+
+    <div class="container">
+        <div class="row">
+            <div id="right">
+                <h1>Formas</h1>
+                <p>Si desea ser voluntario para nuestros eventos, por favor descarga y llenar los formularios a continuación.</p>
+                <%= link_to "Formulario de Exención de Responsabilidad", "/PDFs/CARASLiabilityReleaseForm.pdf" %>
+                <br><%= link_to "Formulario de Voluntarios", "/PDFs/CARASVolunteerIntake.pdf" %></br>
+            </div>
+        </div>
+    </div>
 	<%= render file: "layouts/footer" %>
 </body>
 

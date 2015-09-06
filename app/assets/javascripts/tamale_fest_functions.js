@@ -17,9 +17,7 @@ $(document).ready(function(){
   });
 
   $(window).resize(function(){
-    console.log("resize");
     if(tabOption == "sponsors" || tabOption == "esponsor"){
-      console.log("in if");
       $('#tab-container').empty();
       createSponsorsTable(ev);
     }
