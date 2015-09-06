@@ -6,21 +6,22 @@ $(document).ready(function(){
   if (language === "es")
     tabOption = "descripción";
 
-  var e;
+  var ev;
   if (events[0].language == language){
-    e = events[0];
+    ev = events[0];
   } else {
-    e = events[1];
+    ev = events[1];
   }
-  addTabText(e, tabOption);
-  updateTabContainer(tabOption, e);
+  console.log(ev);
+  addTabText(ev, tabOption);
+  updateTabContainer(tabOption, ev);
 
   $(".nav-tabs").click(function(e){
     $('#' + tabOption).parent().removeClass("active");
     $('#' + e.toElement.id).parent().addClass("active");
     tabOption = e.toElement.id;
 
-    updateTabContainer(tabOption);
+    updateTabContainer(tabOption, ev);
   });
 
   function addTabText(e, selected){
@@ -33,17 +34,18 @@ $(document).ready(function(){
   }
 
   function updateTabContainer(option, e){
-    console.log(option);
     var tabContainer = $('#tab-container');
     tabContainer.empty();
   switch(tabOption){
     // Handle english cases
       case "description":
-        tabContainer.append("<h3><b>Date:</b> " +  + "</h3><h3><b>Time:</b> " + + "</h3>");
+        tabContainer.append("<h3><b>Date:</b> " + e.date + "</h3><h3><b>Time:</b> " + e.start_time +  " - " + e.end_time + "</h3>");
         tabContainer.append("<h3><b>Location:</b> " + + "</h3>");
         break;
       case "sponsors":
-        tabContainer.append("<p>sponsors</p>");
+        for (s in e.sponsors){
+          tabContainer.append("<p>" + s + "</p>");
+        }
         break;
       case "registration":
         tabContainer.append("<p>registration</p>");
