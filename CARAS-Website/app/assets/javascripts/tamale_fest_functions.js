@@ -1,19 +1,11 @@
 $(document).ready(function(){
-  var events = $('#invisible').data('events')
-  var language = $('#invisible').data('lang')
-  var sponsors = $('#invisible').data('sponsors')
-  var tabOption = "description";
+  var ev = $('#invisible').data('event');
+  var language = $('#invisible').data('lang');
 
+  var tabOption = "description";
   if (language === "es")
     tabOption = "descripción";
 
-  var ev;
-  if (events[0].language == language){
-    ev = events[0];
-  } else {
-    ev = events[1];
-  }
-  console.log(ev);
   addTabText(ev, tabOption);
   updateTabContainer(tabOption, ev);
 
@@ -21,8 +13,16 @@ $(document).ready(function(){
     $('#' + tabOption).parent().removeClass("active");
     $('#' + e.toElement.id).parent().addClass("active");
     tabOption = e.toElement.id;
-
     updateTabContainer(tabOption, ev);
+  });
+
+  $(window).resize(function(){
+    console.log("resize");
+    if(tabOption == "sponsors" || tabOption == "esponsor"){
+      console.log("in if");
+      $('#tab-container').empty();
+      createSponsorsTable(ev);
+    }
   });
 
   function addTabText(e, selected){
@@ -39,6 +39,7 @@ $(document).ready(function(){
     tabContainer.empty();
   switch(tabOption){
     // Handle english cases
+      case "descripción":
       case "description":
         var dateArr = e.date.split("-");
         var formattedDate = dateArr[1] + "/" + dateArr[2] + "/" + dateArr[0];
@@ -61,10 +62,9 @@ $(document).ready(function(){
         tabContainer.append("<h3><b>Date:</b> " + formattedDate + "</h3><h3><b>Time:</b> " + startTime +  " - " + endTime + "</h3>");
         tabContainer.append("<h3><b>Location:</b> " + + "</h3>");
         break;
+      case "esponsor":
       case "sponsors":
-        for (s in e.sponsors){
-          tabContainer.append("<p>" + parseInt(e.sponsors[s].to) + "</p>");
-        }
+        createSponsorsTable(e);
         break;
       case "registration":
         tabContainer.append("<p>registration</p>");
@@ -73,11 +73,7 @@ $(document).ready(function(){
         tabContainer.append("<p>entertainment</p>");
         break;
 
-    // Handle spanish cases
-      case "descripción":
-        break;
-      case "esponsor":
-        break;
+
       case "registro":
         break;
       case "entretenimiento":
@@ -85,3 +81,27 @@ $(document).ready(function(){
     };
   }
 });
+
+function createSponsorsTable(e){
+  var sponsors = $('#invisible').data('sponsors');
+        var currRow = 0;
+        tabContainer = $('#tab-container')
+        tabContainer.append("<table><tbody id=\"logo-table\"><tr id=\"" + 
+          "tr" + currRow + "\">");
+        var numLogos = 0;
+        table = $('#logo-table');
+        row = $('#tr' + currRow);
+        for (s in e.sponsors){
+          if ($('body').width() < (numLogos+1)*200){
+            currRow++;
+            table.append("</tr><tr id=\"" + 
+          "tr" + currRow + "\">");
+            numLogos = 0;
+            row = $('#tr' + currRow);
+          }
+          row.append("<td><h3>   <img width=\"150px\" src=\"" + sponsors[parseInt(e.sponsors[s])].logo_url + 
+            "\" alt=\"" + sponsors[parseInt(e.sponsors[s])].name + "\"></img></h3></td>");
+          numLogos++;
+        }
+        tabContainer.append("</tr></tbody></table>");
+}
