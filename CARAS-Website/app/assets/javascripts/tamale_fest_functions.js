@@ -24,44 +24,44 @@ $(document).ready(function(){
       createSponsorsTable(ev);
     }
   });
-
-  function addTabText(e, selected){
-    var tabDiv = $('.nav-tabs');
-    tabDiv.empty();
-    for ( t in e.tabs){
-      tabDiv.append("<li role=\"presentation\"><a id=\"" + e.tabs[t].split(" ")[0].toLowerCase() + "\" >" + e.tabs[t] + "</a></li>");
-    }
-    $('#' + selected).parent().attr('class', 'active');
-  }
-
-  function updateTabContainer(option, e){
-    var tabContainer = $('#tab-container');
-    tabContainer.empty();
-  switch(tabOption){
-    // Handle english cases
-      case "descripción":
-      case "description":
-        generateDescriptionContent(e);
-        break;
-      case "esponsor":
-      case "sponsors":
-        createSponsorsTable(e);
-        break;
-      case "registration":
-        tabContainer.append("<p>registration</p>");
-        break;
-      case "entertainment":
-        tabContainer.append("<p>entertainment</p>");
-        break;
-
-
-      case "registro":
-        break;
-      case "entretenimiento":
-        break;
-    };
-  }
 });
+
+function addTabText(e, selected){
+  var tabDiv = $('.nav-tabs');
+  tabDiv.empty();
+  for ( t in e.tabs){
+    tabDiv.append("<li role=\"presentation\"><a id=\"" + e.tabs[t].split(" ")[0].toLowerCase() + "\" >" + e.tabs[t] + "</a></li>");
+  }
+  $('#' + selected).parent().attr('class', 'active');
+}
+
+function updateTabContainer(option, e){
+  var tabContainer = $('#tab-container');
+  tabContainer.empty();
+  switch(option){
+    // Handle english cases
+    case "descripción":
+    case "description":
+      generateDescriptionContent(e);
+      break;
+    case "esponsor":
+    case "sponsors":
+      createSponsorsTable(e);
+      break;
+    case "registration":
+      tabContainer.append("<p>registration</p>");
+      break;
+    case "entertainment":
+      tabContainer.append("<p>entertainment</p>");
+      break;
+
+
+    case "registro":
+      break;
+    case "entretenimiento":
+      break;
+  };
+}
 
 function createSponsorsTable(e){
   var sponsors = $('#invisible').data('sponsors');
