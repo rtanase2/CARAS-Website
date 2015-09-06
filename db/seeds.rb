@@ -31,8 +31,8 @@ Event.create(event_name: "Second Annual Tamale Festival",
              event_type: "tamale-fest")
 
 Event.create(event_name: "Segundo Festival del Tamal",
-             subheader: "GET SUBHEADER",
-             description: "GET CONTENT!",
+             subheader: "Traído a usted por CARAS y El Charrito Mercado",
+             description: "¡Diversión para toda la familia! Estamos ofreciendo un número de vendedores de tamales de diferentes orígenes que usted puede comprar , así como proporcionar entretenimiento thorughout el día. Habrá bailarines , una exhibición de autos , un tamal Cook Off , actuaciones musicales y mucho más ! No te pierdas este gran evento!",
              date: DateTime.new(2015, 9, 27),
              start_time: DateTime.new(2015, 9, 27, 12, 00, 0),
              end_time: DateTime.new(2015, 9, 27, 19, 00, 0),
