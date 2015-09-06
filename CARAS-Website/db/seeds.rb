@@ -14,7 +14,7 @@
 # TAMALE FESTIVAL
 # ========================================
 
-Event.create(name: "Second Annual Tamale Festival",
+Event.create(event_name: "Second Annual Tamale Festival",
              description: "Fun for the whole family! We are featuring an number of tamale vendors from different origins that you can purchase as well as providing entertainment thorughout the day. There will be dancers, a car show, a tamale cook off, musical performances and much more! Don't miss this great event!",
              subheader: "Brought to you by CARAS and El Charrito Market",
              date: DateTime.new(2015, 9, 27),
@@ -30,7 +30,7 @@ Event.create(name: "Second Annual Tamale Festival",
              tabs: ["Description", "Sponsors", "Entertainment and Vendors", "Registration"],
              event_type: "tamale-fest")
 
-Event.create(name: "Segundo Festival del Tamal",
+Event.create(event_name: "Segundo Festival del Tamal",
              subheader: "GET SUBHEADER",
              description: "GET CONTENT!",
              date: DateTime.new(2015, 9, 27),
