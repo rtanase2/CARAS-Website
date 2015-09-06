@@ -195,7 +195,7 @@
         
 		<!-- Terms -->
 		
-		<div style="width:600px;height:50px;line-height:1em;overflow:auto;padding:5px">
+		<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
 			I understand that participation in the above Activity or Event may be hazardous for the above-named participant.<br>
 			In signing below, I assume risk of harm or injury which may occur to the participant as a result of participating in the above-named event or activity. I hereby release Community Agency for Resources, Advocacy and Services,
 			CARAS 8545 Monterey Road #A, Gilroy, CA and its officers, employees, or agents from any liability costs and damages resulting in this individual's participation.
@@ -205,27 +205,21 @@
 		
         <p>
             <%= check_box("volunteer", "signed_participant", {onclick: 'checkBox()'}, true, false) %>
-            <%= f.label(:parent_name, "By check this box, I (the participant), authorize that I would like to volunteer at CARAS and have read the above terms.") %>
+            <%= f.label(:parent_name, "By checking this box, I (the participant), authorize that I would like to volunteer at CARAS and have read the above terms.") %>
         </p>
 		
 		<!--
-			Trying to add collapse-ability to the form. Rails isn't liking it apparently.
+			Trying to add collapse-ability to the form. Rails isn't liking it apparently. -->
 		
 		<p>
-			<%= check_box("volunteer", "minor", { html: { data-toggle: 'minorTerms' } }, true, false) %>
+			<%= check_box("volunteer", "minor", { onclick: 'displayMinorTerms()' }, true, false) %>
 			<%= f.label(:minor, "Is the participant a minor?") %>
 		</p>
 		
-		-->
-		
-		<!--
-		
-		<div id="minorTerms" class="collapse">
-		
-		-->
+		<div id="minorTerms" style=" display:none">	
 			<!-- Minor terms -->
 			
-			<div style="width:600px;height:50px;line-height:1em;overflow:auto;padding:5px">
+			<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
 				I agree that the minor has my consent to participate in the event or activity.<br>
 				I also give my consent for the business or organization to seek emergency treatment for the minor if necessary, and I agree to accept financial responsibility for the costs related to this emergency treatment.
 			</div>
@@ -234,27 +228,24 @@
 			
 			<p>
 				<%= check_box("volunteer", "signed_parent", {}, true, false) %>
-				<%= f.label(:parent_name, "By check this box, I (the gaurdian), authorize that my child can volunteer with CARAS and have read the terms above.") %>
+				<%= f.label(:parent_name, "By checking this box, I (the gaurdian), authorize that my child can volunteer with CARAS and have read the above terms.") %>
 			</p>
 			
 			<p>
 				<%= f.label :parent_name %><br>
 				<%= f.text_field :parent_name %>
-			</p>
-
-		<!--
-		
+			</p>		
 		</div>
-
-		-->
         
         <p>
-            <button type="submit" name="commit" value="Submit" disabled>Submit</button>
+            <button onclick="clickSubmit" type="submit" name="commit" value="Submit" disabled>Submit</button>
         </p>
     <% end %>
 	
-	<!-- Javascript for checkbox -->
 	<script>
+	
+	<!-- Enabling and disabling the submit button -->
+	
 	function checkBox(){
 		if (document.getElementById("volunteer_signed_participant").checked){
 		
@@ -268,6 +259,26 @@
 			document.volunteerForm.commit.disabled = true;
 		}
 	}
+	
+	<!-- Alerting the user they need to read the terms before submitting -->
+	
+	function clickSubmit(){
+		if(!document.getElementById("volunteer_signed_participant").checked){
+			alert("You must read and agree to the terms of service before submitting.");
+		}
+	}
+	
+	<!-- Display minor info if the check box is clicked -->
+	
+	function displayMinorTerms(){
+		if(document.getElementById("volunteer_minor").checked){
+			document.getElementById("minorTerms").style.display = "block";
+		}
+		else{
+			document.getElementById("minorTerms").style.display = "none";
+		}
+	}
+	
 	</script>
 
         
