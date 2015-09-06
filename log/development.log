@@ -2390,3 +2390,254 @@ Processing by PagesController#show as HTML
   [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
   Rendered layouts/navbar.html.erb (16.0ms)
 Completed 200 OK in 152ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/volunteer?lang=es" for ::1 at 2015-09-06 12:44:17 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"volunteer"}
+  Rendered layouts/footer.html.erb (14.0ms)
+  Rendered pages/volunteer-es.html.erb within layouts/application (16.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (23.0ms)
+Completed 200 OK in 226ms (Views: 225.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events?lang=es" for ::1 at 2015-09-06 12:44:21 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"events"}
+  Rendered layouts/footer.html.erb (11.0ms)
+  Rendered pages/events-es.html.erb within layouts/application (15.0ms)
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (13.0ms)
+Completed 200 OK in 139ms (Views: 137.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 12:44:25 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[36mSponsor Load (0.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (10.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (34.1ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (11.2ms)
+Completed 200 OK in 146ms (Views: 144.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/events-es" for ::1 at 2015-09-06 12:44:41 -0700
+Processing by EventController#show as HTML
+  Parameters: {"event"=>"events-es"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template event/events-es with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/wc_ka/Desktop/CARAS-Website/app/views"
+):
+  app/controllers/event_controller.rb:3:in `show'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (29.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (29.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (63.1ms)
+
+
+Started GET "/events/events-es" for ::1 at 2015-09-06 12:44:41 -0700
+Processing by EventController#show as HTML
+  Parameters: {"event"=>"events-es"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template event/events-es with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/wc_ka/Desktop/CARAS-Website/app/views"
+):
+  app/controllers/event_controller.rb:3:in `show'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (31.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (69.1ms)
+
+
+Started GET "/contact-us?lang=es" for ::1 at 2015-09-06 12:44:46 -0700
+Processing by PagesController#show as HTML
+  Parameters: {"lang"=>"es", "page"=>"contact-us"}
+  Rendered layouts/footer.html.erb (11.0ms)
+  Rendered pages/contact-us-es.html.erb within layouts/application (26.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (13.0ms)
+Completed 200 OK in 158ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/aztecmural.jpg" for ::1 at 2015-09-06 12:44:46 -0700
+Processing by EventController#show as JPEG
+  Parameters: {"event"=>"aztecmural"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template event/aztecmural with {:locale=>[:en], :formats=>[:jpeg], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/wc_ka/Desktop/CARAS-Website/app/views"
+):
+  app/controllers/event_controller.rb:3:in `show'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (42.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (84.7ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 12:44:48 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[36mSponsor Load (0.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (11.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (33.0ms)
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 155ms (Views: 153.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/events-es" for ::1 at 2015-09-06 12:44:49 -0700
+Processing by EventController#show as HTML
+  Parameters: {"event"=>"events-es"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template event/events-es with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/wc_ka/Desktop/CARAS-Website/app/views"
+):
+  app/controllers/event_controller.rb:3:in `show'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (29.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.3ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (65.3ms)
+
+
+Started GET "/events/events-es" for ::1 at 2015-09-06 12:44:50 -0700
+Processing by EventController#show as HTML
+  Parameters: {"event"=>"events-es"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template event/events-es with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Users/wc_ka/Desktop/CARAS-Website/app/views"
+):
+  app/controllers/event_controller.rb:3:in `show'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (31.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (70.5ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 12:45:14 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?[0m  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[35mSponsor Load (0.0ms)[0m  SELECT "sponsors".* FROM "sponsors"
+  Rendered layouts/footer.html.erb (11.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (32.1ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (12.0ms)
+Completed 200 OK in 146ms (Views: 145.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 12:45:30 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[36mSponsor Load (0.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (10.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (30.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (13.0ms)
+Completed 200 OK in 159ms (Views: 159.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 12:45:42 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?[0m  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[35mSponsor Load (1.0ms)[0m  SELECT "sponsors".* FROM "sponsors"
+  Rendered layouts/footer.html.erb (10.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (32.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (15.0ms)
+Completed 200 OK in 172ms (Views: 169.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/tamale-fest?lang=en" for ::1 at 2015-09-06 12:45:48 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"en", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "en"]]
+  [1m[36mSponsor Load (0.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (12.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (31.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "en"]]
+  Rendered layouts/navbar.html.erb (12.5ms)
+Completed 200 OK in 143ms (Views: 142.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/tamale-fest?lang=en" for ::1 at 2015-09-06 12:45:59 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"en", "event"=>"tamale-fest"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?[0m  [["event_type", "tamale-fest"], ["language", "en"]]
+  [1m[35mSponsor Load (0.0ms)[0m  SELECT "sponsors".* FROM "sponsors"
+  Rendered layouts/footer.html.erb (10.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (31.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."language" = ?[0m  [["language", "en"]]
+  Rendered layouts/navbar.html.erb (13.0ms)
+Completed 200 OK in 153ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/tamale-fest?lang=es" for ::1 at 2015-09-06 12:46:05 -0700
+Processing by EventController#show as HTML
+  Parameters: {"lang"=>"es", "event"=>"tamale-fest"}
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."event_type" = ? AND "events"."language" = ?  [["event_type", "tamale-fest"], ["language", "es"]]
+  [1m[36mSponsor Load (1.0ms)[0m  [1mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered layouts/footer.html.erb (10.0ms)
+  Rendered event/tamale-fest.html.erb within layouts/application (31.0ms)
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."language" = ?  [["language", "es"]]
+  Rendered layouts/navbar.html.erb (13.0ms)
+Completed 200 OK in 153ms (Views: 152.1ms | ActiveRecord: 1.0ms)
