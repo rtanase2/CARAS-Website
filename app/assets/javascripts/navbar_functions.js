@@ -29,9 +29,10 @@ function fillInOptionsText(lang){
 	}
 	for(x = 0; x < tabText.length; x++){
 		links[x].text(tabText[x]);
-		links[x].attr('href', "/" + links[x].attr('id') + "?lang=" + lang);
 		if (tabText[x] === "Events" || tabText[x] === "Eventos"){
 			links[x].append("<span class=\"caret\"></span>")
+		} else {
+			links[x].attr('href', "/" + links[x].attr('id') + "?lang=" + lang);
 		}
 	}	
 }
