@@ -1,6 +1,5 @@
 class CreateEvents < ActiveRecord::Migration
   def change
-  	#image1 and image2 will be paths to image files
     create_table :events do |t|
       t.text :name
       t.text :description
@@ -8,6 +7,8 @@ class CreateEvents < ActiveRecord::Migration
       t.date :date
       t.time :start_time
       t.time :end_time
+      t.string :sponsors
+      t.string :entertainment
       t.string :street_address
       t.string :city
       t.string :zip_code

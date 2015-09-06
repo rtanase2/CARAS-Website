@@ -44,7 +44,7 @@ $(document).ready(function(){
         break;
       case "sponsors":
         for (s in e.sponsors){
-          tabContainer.append("<p>" + s + "</p>");
+          tabContainer.append("<p>" + e.sponsors[s] + "</p>");
         }
         break;
       case "registration":
