@@ -66,27 +66,39 @@ function generateRegistrationContent(e){
       tabContainer.append("<h1>" + (e.language == "en" ? "Registration" : "Registro") + "</h1>");
       (e.language == "en" ? 
       tabContainer.append("<p>Please download and fill out the forms below and email them to rarmendariz@carassouthcounty.org, or bring them in to the office located at 7365 Monterey Rd Gilroy, CA 95020.</p>") :
-      tabContainer.append("<p>Por favor, descargue y complete el formulario a continuación y enviarlas por correo electrónico a rarmendariz@carassouthcounty.org, o llevarlos a la oficina situada en 7365 Monterey Rd Gilroy, CA 95020 .</p>"));
+      tabContainer.append("<p>Por favor, descargue y complete el formulario a continuación y enviarlas por correo electrónico a rarmendariz@carassouthcounty.org, o llevarlos a la oficina situada en 7365 Monterey Rd Gilroy, CA 95020.</p>"));
       //Vendors
       tabContainer.append("<h2>" + (e.language == "en" ? "Vendors" : "Vendedores") + "</h2>");
-      tabContainer.append(" <a href=\"/PDFs/TFF_Booth_Construction.pdf\" target=\"_blank\">Booth Construction Form</a>");
-      tabContainer.append(" <a href=\"/PDFs/TFF_Application.pdf\" target=\"_blank\">Temporary Food Facility Application</a>");
-      tabContainer.append(" <a href=\"/PDFs/TE_Self_Checklist.pdf\" target=\"_blank\">Booth Checklist</a>");
+      tabContainer.append(" <a href=\"/PDFs/TFF_Booth_Construction.pdf\" target=\"_blank\">" + 
+                            (e.language == "en" ? "Booth Construction Form" : "Stand Forma de construcción")
+                            + "</a>");
+      tabContainer.append(" <a href=\"/PDFs/TFF_Application.pdf\" target=\"_blank\">" + 
+                            (e.language == "en" ? "Temporary Food Facility Application" : "Aplicación Mecanismo Alimentario Temporal")
+                            + "</a>");
+      tabContainer.append(" <a href=\"/PDFs/TE_Self_Checklist.pdf\" target=\"_blank\">" + 
+                            (e.language == "en" ? "Booth Checklist" : "Stand Checklist")
+                            + "</a>");
 
       //Volunteers
       tabContainer.append("<h2>" + (e.language == "en" ? "Volunteers" : "Voluntarios") + "</h2>");
-      tabContainer.append(" <a href=\"/PDFs/CARASLiabilityReleaseForm.pdf\" target=\"_blank\">Booth Checklist</a>");
-      tabContainer.append(" <a href=\"/PDFs/CARASVolunteerIntake.pdf\" target=\"_blank\">CARAS Vendor Application</a>");
+      tabContainer.append(" <a href=\"/PDFs/CARASLiabilityReleaseForm.pdf\" target=\"_blank\">" + 
+                            (e.language == "en" ? "Liability Release Form" : "Formulario de Exención de Responsabilidad")
+                            + "</a>");
+      tabContainer.append(" <a href=\"/PDFs/CARASVolunteerIntake.pdf\" target=\"_blank\">" + 
+                            (e.language == "en" ? "CARAS Vendor Application" : "CARAS Proveedor de la Aplicación")
+                            + "</a>");
 
       //Car Show
       tabContainer.append("<h2>" + (e.language == "en" ? "Car Show" : "Exhibición de Carros") + "</h2>");
-      tabContainer.append(" <a href=\"/PDFs/2nd Anniual Tamale Carshow Registration Final (3) 2.pdf\" target=\"_blank\">Carshow Registration Form</a>");
+      tabContainer.append(" <a href=\"/PDFs/2nd Anniual Tamale Carshow Registration Final (3) 2.pdf\" target=\"_blank\">" + 
+                            (e.language == "en" ? "Car Show Application" : "Aplicación de la Exhibición de Carros")
+                            + "</a>");
       
       //Tamale Cook Off
       tabContainer.append("<h2>" + (e.language == "en" ? "Tamale Cook Off" : "Tamal Concurso") + "</h2>");
       (e.language == "en" ? 
       tabContainer.append(" <a href=\"/PDFs/TAMALE FESTIVAL CONTEST english.pdf\" target=\"_blank\">Tamale Cook Off Registration Form</a>") :
-      tabContainer.append(" <a href=\"/PDFs/TAMALE FESTIVAL CONTEST spanish.pdf\" target=\"_blank\">Tamale Cook Off Registration Form</a>"))
+      tabContainer.append(" <a href=\"/PDFs/TAMALE FESTIVAL CONTEST spanish.pdf\" target=\"_blank\">Aplicación de la Tamal Concurso</a>"))
       
 }
 
