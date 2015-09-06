@@ -80,7 +80,7 @@ function createSponsorsTable(e){
       numLogos = 0;
       row = $('#tr' + currRow);
     }
-    row.append("<td><h3>   <img width=\"150px\" src=\"" + sponsors[parseInt(e.sponsors[s])].logo_url + 
+    row.append("<td><h3>   <img width=\"150px\" src=\"/" + sponsors[parseInt(e.sponsors[s])].logo_url + 
       "\" alt=\"" + sponsors[parseInt(e.sponsors[s])].name + "\"></img></h3></td>");
     numLogos++;
   }
