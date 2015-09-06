@@ -36,8 +36,7 @@ function addTabText(e, selected){
 }
 
 function updateTabContainer(option, e){
-  var tabContainer = $('#tab-container');
-  tabContainer.empty();
+  $("#tab-container").empty();
   switch(option){
     // Handle english cases
     case "descripción":
@@ -54,9 +53,14 @@ function updateTabContainer(option, e){
       break;
     case "entertainment":
     case "entretenimiento":
-      tabContainer.append("<p>entertainment</p>");
+      generateEntertainment(e);
       break;
   };
+}
+
+function generateEntertainment(e){
+  tabContainer = $('#tab-container');
+  tabContainer.append("<h3>" + (e.language == "en" ? "Coming Soon!" : "¡Próximamente!") + "</h3>"); 
 }
 
 function generateRegistrationContent(e){
