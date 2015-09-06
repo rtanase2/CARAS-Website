@@ -47,11 +47,6 @@ function findActiveSelection(currPath){
 	options = ["about-us", "contact-us", "volunteer", "donate"];
 	options = options.map(function(e) { return currPath.indexOf(e)});
 	i = options.indexOf(options.filter(function(e) {return e > -1})[0]);
-	console.log("=====================");
-	console.log(options);
-	console.log(i);
-	console.log(options.filter(function(e) {return e > -1}));
-	console.log("=====================");
 	if (i == -1){
 		return 2;
 	} else if (i >= 2) {

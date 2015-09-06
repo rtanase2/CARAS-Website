@@ -1,5 +1,14 @@
 $(document).ready(function(){
   var tabOption = "description";
+  var events = $('#invisible').data('events')
+  var language = $('#invisible').data('lang')
+  var e = "null";
+  if (events[0].language == language){
+    e = events[0];
+  } else {
+    e = events[1];
+  }
+  console.log(e);
   updateTabContainer(tabOption);
 
   $(".nav-tabs").click(function(e){
@@ -11,9 +20,9 @@ $(document).ready(function(){
   });
 
   function updateTabContainer(option){
-  	var tabContainer = $('#tab-container');
+    var tabContainer = $('#tab-container');
     tabContainer.empty();
-	switch(tabOption){
+  switch(tabOption){
       case "description":
         tabContainer.append("<h3><b>Date:</b> Sunday, September 27, 2015</h3><h3><b>Time:</b> 12:00 - 7:00 PM</h3>");
         tabContainer.append("<h3><b>Location:</b> Monterey Road between 3rd Street and 6th Street</h3>");
@@ -28,5 +37,5 @@ $(document).ready(function(){
         tabContainer.append("<p>entertainment</p>");
         break;
     }
-}
+  }
 });

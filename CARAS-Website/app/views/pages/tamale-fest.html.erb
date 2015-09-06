@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <% event = Event.where(:event_type => params[:page].downcase) %>
-    <%= content_tag("div", nil, :id => 'invisible', :data => {:event => event}) %>
+    <% events = Event.where(:event_type => params[:page].downcase) %>
+    <%= content_tag("div", nil, :id => 'invisible', :data => {:events => events, :lang => params[:lang]}) %>
     <title></title>
-    <%= javascript_include_tag 'tamale_fest_' << params[:lang] << '_functions', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'tamale_fest_functions', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
@@ -26,10 +26,6 @@
           </ol>
 
           <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#" id="description" ></a></li>
-            <li role="presentation"><a href="#" id="sponsors"></a></li>
-            <li role="presentation"><a href="#" id="entertainment"></a></li>
-            <li role="presentation"><a href="#" id="registration"></a></li>
           </ul>
           <div id="tab-container"></div>
         </div>
