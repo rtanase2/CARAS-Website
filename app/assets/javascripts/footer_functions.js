@@ -1,4 +1,7 @@
-$(document).ready(function(){
+$(document).ready(updateFooter);
+$(document).on('page:load', updateFooter);
+
+function updateFooter(){
 	// Change language button to have the correct language text (English? or Spanish?)
 	var languageButton = $('#language-button');
 	var currPath = window.location.href;
@@ -16,4 +19,4 @@ $(document).ready(function(){
 		link = currPath + "?lang=" + (pageInSpanish ? "en" : "es"); 
 	
 	languageButton.attr("href", link);
-});
+}

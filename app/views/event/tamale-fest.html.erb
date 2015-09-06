@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% event = Event.where(:event_type => params[:event].downcase).where(:language => params[:lang].downcase)[0] %>
+    <%= content_tag("div", nil, :id => 'invisible', :data => {:event => event, :lang => params[:lang], :sponsors => Sponsor.all})%>
+    <title> <%= event.event_name %> </title>
+    <%= javascript_include_tag 'tamale_fest_functions', 'data-turbolinks-track' => true %>
+</head>
+
+<body>
+    <div class="jumbotron" style="margin-bottom: 0; background-image: url(/tamale_header_1.jpg);">
+      <div>
+        <h1 style="color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"> <%= event.event_name %> </h1>
+        <p style="color:white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"> <%= event.subheader %> </p>
+      </div>
+    </div>
+
+    <p style="font-size: 7px; text-align: right; padding-bottom: 23px; padding-right: 10px">Photo by <a style="padding-left: 0" href="https://www.flickr.com/photos/shaynabright/" target="_blank">shaynabright</a>. License can be found <a style="padding-left: 0" href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">here</a>.</p>
+
+    <div class="container">
+        <div class="row">
+          <ol class="breadcrumb">
+            <li><%= event.language == "en" ? "Events" : "Eventos" %></li>
+            <li><%= event.event_name %></li>
+          </ol>
+
+          <ul class="nav nav-tabs">
+          </ul>
+          <div id="tab-container"></div>
+        </div>
+    </div>
+
+    <%= render file: "layouts/footer" %>
+
+</body>
+
+</html>
+</body>
+
+</html>

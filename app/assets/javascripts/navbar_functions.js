@@ -1,26 +1,15 @@
-$(document).ready(function(){
+$(document).ready(updateNav);
+
+$(document).on('page:load', updateNav);
+
+function updateNav(){
 	var currPath = window.location.href;
-	console.log(currPath);
 	var currLang = currPath.slice(-2);
 	var hasLangParam = currPath.indexOf("lang") != -1;
 	var pageInSpanish = currLang === 'es';
-	var language = ((hasLangParam && pageInSpanish) ? "English?" : "Espanol?");
-	var currLanguage = 
-	           ((language.slice(0, 2).toLowerCase() === 'en') ?
-							'es' : 'en');
-	setActiveSelection();
-	fillInOptionsText(currLanguage);
-	fillInEventsDropdown(currLanguage);
-});
-
-function fillInEventsDropdown(lang){
-	var events = $('#invisible').data('rubyvar');
-	var ddm = $('.dropdown-menu');
-	ddm.empty();
-	for (e in events){
-		e = events[e];
-		ddm.append("<a href=" + e.path + ">" + e.name + "</a>");
-	}
+	var language = ((hasLangParam && pageInSpanish) ? "es" : "en");
+	fillInOptionsText(language);
+	setActiveSelection(currPath);
 }
 
 function fillInOptionsText(lang){
@@ -40,41 +29,31 @@ function fillInOptionsText(lang){
 	}
 	for(x = 0; x < tabText.length; x++){
 		links[x].text(tabText[x]);
-		links[x].attr('href', links[x].attr('id') + "?lang=" + lang);
+		if (tabText[x] === "Events" || tabText[x] === "Eventos"){
+			links[x].append("<span class=\"caret\"></span>")
+		} else {
+			links[x].attr('href', "/" + links[x].attr('id') + "?lang=" + lang);
+		}
 	}	
 }
 
-function setActiveSelection(){
-	var activeTabIndex = findActiveSelection();
+function setActiveSelection(currPath){
+	var activeTabIndex = findActiveSelection(currPath);
 	var activeTab = $($('.nav-option')[activeTabIndex]);
 	activeTab.addClass("active");
 	activeTab.append("<span class=\"sr-only\">(current)</span>");
 }
 
-function findActiveSelection(){
-	var title = $('title').text();
-	title = title.replace("CARAS | ", "").toLowerCase();
-
-	switch(title){
-		case "misión":
-		case "about us":
-			return(0);
-		case "aser contacto con nosotros":
-		case "contact us":
-			return(1);
-		case "voluntario":
-		case "volunteer":
-			return(3);
-		case "galería":
-		case "gallery":
-			return(4);
-		case "conocer al equipo":
-		case "meet the team":
-			return(5);
-		case "donar":
-		case "donate":
-			return(6);
-		default:
-			return(2);
+function findActiveSelection(currPath){
+	// UNCOMMENT WHEN ALL OPTIONS ARE AVAILABLE options = ["about-us", "contact-us", "volunteer", "gallery", "meet-the-team", "donate"];
+	options = ["about-us", "contact-us", "volunteer", "donate"];
+	options = options.map(function(e) { return currPath.indexOf(e)});
+	i = options.indexOf(options.filter(function(e) {return e > -1})[0]);
+	if (i == -1){
+		return 2;
+	} else if (i >= 2) {
+		return i + 1;
+	} else {
+		return i;
 	}
 }

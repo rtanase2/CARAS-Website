@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CARAS | Aser Contacto con Nosotros</title>
+  <%= javascript_include_tag 'contact_us_functions', 'data-turbolinks-track' => true %>
+</head>
+
+<body>
+
+<div class="jumbotron" style="background-image: url(aztecmural.jpg);">
+  <div>
+    <h1>Aser Contacto con Nosotros</h1>
+    <p>Cómo Contactar con Nosotros</p>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div id="left" style="float: right">
+        <h1><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3186.1564810305445!2d-121.5681427!3d37.0060631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091e3b977fa2433%3A0xc938153c171926e0!2s7365+Monterey+Rd%2C+Gilroy%2C+CA+95020!5e0!3m2!1sen!2sus!4v1439514560273" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></img></h1>
+      </div>
+      <div id="right">
+      <h1>Información del Contacto</h1>
+      <h2>Oficina</h2>
+      <p>Recientemente nos mudamos a una nueva oficina increíble en el Old Gilroy hotel. Nuestra dirección es <b>7365 Monterey Rd Gilroy, CA 95020</b>.</p>
+      <h2>Teléfono</h2>
+      <p>(408)847-4978</p>
+      <h2>Fax</h2>
+      <p>(408)846-1089</p>
+      </div>
+    </div>
+</div>
+
+<%= render file: "layouts/footer" %>
+
+</body>
+
+</html>
