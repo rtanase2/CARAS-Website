@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   root "pages#show", page: "about-us", lang: "en"
-  get "vendor-index(\?lang=:lang)" => "vendor#index"
-  get "vendor-new(\?lang=:lang)" => "vendor#new"
-  post "vendor-new(\?lang=:lang)" => "vendor#create"
-  get "vendor-submit(\?lang=:lang)" => "vendor#submit"
   get ":page(\?lang=:lang)" => "pages#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
