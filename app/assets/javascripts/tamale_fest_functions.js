@@ -152,5 +152,5 @@ function generateDescriptionContent(e){
   tabContainer.append("<h3><b>" + (e.language == "en" ? "Location: " : "Lugar: ") + "</b> " + e.street_address + ", " + 
                       e.city + ", " + e.state + " " + e.zip_code 
                       + "</h3>");
-  tabContainer.append("<p>" + e.description + "</p>")
+  tabContainer.append("<p>" + e.description + "</p>");
 }
