@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "pages#show", page: "about-us", lang: "en"
+  get "events/:event(\?lang=:lang)" => "event#show"
   get ":page(\?lang=:lang)" => "pages#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
