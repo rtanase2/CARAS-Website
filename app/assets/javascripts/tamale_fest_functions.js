@@ -111,7 +111,6 @@ function createSponsorsTable(e){
   var numLogos = 0;
   table = $('#logo-table');
   row = $('#tr' + currRow);
-  console.log(sponsors)
   for (s in sponsors){
     if ($('body').width() < (numLogos+1)*200){
       currRow++;
