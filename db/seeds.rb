@@ -75,7 +75,7 @@ Sponsor.create(sponsor_name: "Cresco Equipment Rentals",
                logo_url: "crescologo.png")
 
 Sponsor.create(sponsor_name: "Tequila VIP Club",
-               logo_url: "tequilavipclub.png")
+               logo_url: "tequilavipclub.PNG")
 
 Sponsor.create(sponsor_name: "Silicon Valley Credit Repair",
                logo_url: "svcreditrepair.PNG")
