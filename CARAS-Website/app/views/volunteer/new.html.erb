@@ -227,7 +227,7 @@
 			<!-- End Minor Terms -->
 			
 			<p>
-				<%= check_box("volunteer", "signed_parent", {}, true, false) %>
+				<%= check_box("volunteer", "signed_parent", {onclick: 'checkBox()'}, true, false) %>
 				<%= f.label(:parent_name, "By checking this box, I (the gaurdian), authorize that my child can volunteer with CARAS and have read the above terms.") %>
 			</p>
 			
@@ -237,9 +237,9 @@
 			</p>		
 		</div>
         
-        <p>
-            <button onclick="clickSubmit" type="submit" name="commit" value="Submit" disabled>Submit</button>
-        </p>
+		<p id="submitButtonArea" onclick="clickSubmit()">
+			<button type="submit" name="commit" value="Submit" id="submitButton" disabled>Submit</button>
+		</p>
     <% end %>
 	
 	<script>
@@ -247,26 +247,35 @@
 	<!-- Enabling and disabling the submit button -->
 	
 	function checkBox(){
-		if (document.getElementById("volunteer_signed_participant").checked){
-		
-			//TODO
-			//Make submit button clickable after check box has been ticked.
-			//May require more checks incase user is a minor.
-			document.volunteerForm.commit.disabled = false;
-			
+		if(document.getElementById("volunteer_minor").checked){
+			if(document.getElementById("volunteer_signed_participant").checked && document.getElementById("volunteer_signed_parent").checked){
+				document.volunteerForm.commit.disabled = false;
+			}
+			else{
+				document.volunteerForm.commit.disabled = true;
+			}
 		}
 		else{
-			document.volunteerForm.commit.disabled = true;
+			if (document.getElementById("volunteer_signed_participant").checked){
+				document.volunteerForm.commit.disabled = false;		
+			}
+			else{
+				document.volunteerForm.commit.disabled = true;
+			}
 		}
 	}
 	
 	<!-- Alerting the user they need to read the terms before submitting -->
 	
+	<!-- Doesn't work
 	function clickSubmit(){
-		if(!document.getElementById("volunteer_signed_participant").checked){
+		if(document.volunteerForm.commit.disabled){
+			document.volunteerForm.commit.disabled = false;
 			alert("You must read and agree to the terms of service before submitting.");
+			document.volunteerForm.commit.disabled  = true;
 		}
-	}
+	} 
+	-->
 	
 	<!-- Display minor info if the check box is clicked -->
 	
