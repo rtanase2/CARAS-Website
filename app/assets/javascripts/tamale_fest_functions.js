@@ -111,7 +111,8 @@ function createSponsorsTable(e){
   var numLogos = 0;
   table = $('#logo-table');
   row = $('#tr' + currRow);
-  for (s in e.sponsors){
+  console.log(sponsors)
+  for (s in sponsors){
     if ($('body').width() < (numLogos+1)*200){
       currRow++;
       table.append("</tr><tr id=\"" + 
@@ -119,8 +120,8 @@ function createSponsorsTable(e){
       numLogos = 0;
       row = $('#tr' + currRow);
     }
-    row.append("<td><h3>   <img width=\"150px\" src=\"/" + sponsors[parseInt(e.sponsors[s])].logo_url + 
-      "\" alt=\"" + sponsors[parseInt(e.sponsors[s])].name + "\"></img></h3></td>");
+    row.append("<td><h3>   <img width=\"150px\" src=\"/" + sponsors[s].logo_url + 
+      "\" alt=\"" + sponsors[s].sponsor_name + "\"></img></h3></td>");
     numLogos++;
   }
   tabContainer.append("</tr></tbody></table>");

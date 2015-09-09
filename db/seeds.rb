@@ -27,7 +27,6 @@ Event.create(event_name: "Second Annual Tamale Festival",
              img_takers_url: "https://www.flickr.com/photos/shaynabright/",
              img_takers_name: "shaynabright",
              img_license_url: "https://creativecommons.org/licenses/by-nc-nd/2.0/",
-             sponsors: ["0"],
              entertainment: [],
              state: "CA",
              language: "en",
@@ -47,7 +46,6 @@ Event.create(event_name: "Segundo Festival del Tamal",
              img_takers_url: "https://www.flickr.com/photos/shaynabright/",
              img_takers_name: "shaynabright",
              img_license_url: "https://creativecommons.org/licenses/by-nc-nd/2.0/",
-             sponsors: ["0"],
              entertainment: [],
              state: "CA",
              language: "es",
@@ -58,5 +56,66 @@ Event.create(event_name: "Segundo Festival del Tamal",
 # SPONSORS SEEDS
 # ==================================================
 
-Sponsor.create(name: "CARAS",
+Sponsor.create(sponsor_name: "CARAS",
                logo_url: "caras-logo-transparent.png")
+
+Sponsor.create(sponsor_name: "JC Customs Tires & Wheels",
+               logo_url: "JCTiresLogo.png")
+
+Sponsor.create(sponsor_name: "Gilroy Chevrolet",
+               logo_url: "GilroyChevroletLogo.png")
+
+Sponsor.create(sponsor_name: "Lazer Radio",
+               logo_url: "LazerRadioLogo.png")
+
+Sponsor.create(sponsor_name: "Rosso's Furniture",
+               logo_url: "RossosLogo.PNG")
+
+Sponsor.create(sponsor_name: "Cresco Equipment Rentals",
+               logo_url: "crescologo.png")
+
+Sponsor.create(sponsor_name: "Tequila VIP Club",
+               logo_url: "tequilavipclub.png")
+
+Sponsor.create(sponsor_name: "Silicon Valley Credit Repair",
+               logo_url: "svcreditrepair.PNG")
+
+Sponsor.create(sponsor_name: "Pronto Auto Repair",
+               logo_url: "prontologo.PNG")
+
+Sponsor.create(sponsor_name: "South Santa Clara Valley Memorial District",
+               logo_url: "sscvmemoriallogo.PNG")
+
+Sponsor.create(sponsor_name: "Arteaga's Food Center",
+               logo_url: "arteagaslogo.PNG")
+
+Sponsor.create(sponsor_name: "Christopher Ranch",
+               logo_url: "ChristopherRanchlogo.PNG")
+
+Sponsor.create(sponsor_name: "The Labor Compliance Managers",
+               logo_url: "lcmlogo.PNG")
+
+Sponsor.create(sponsor_name: "Santa Clara County Public Health",
+               logo_url: "SCC public health.PNG")
+
+Sponsor.create(sponsor_name: "Recology",
+               logo_url: "recology.PNG")
+
+Sponsor.create(sponsor_name: "Golden State Portables",
+               logo_url: "gsp.PNG")
+
+Sponsor.create(sponsor_name: "Dr. John B. Perez DDS",
+               logo_url: "djbp.png")
+
+# ==================================================
+# SPONSORSHIP SEEDS
+# ==================================================
+
+english_tamale_fest = Event.find(1)
+spanish_tamale_fest = Event.find(2)
+
+for id in 1..Sponsor.all.count
+      english_tamale_fest.sponsorships.create(:sponsor_id => id)
+      spanish_tamale_fest.sponsorships.create(:sponsor_id => id)
+end
+

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <%= content_tag("div", nil, :id => 'invisible', :data => {:event => @event, :lang => params[:lang], :sponsors => Sponsor.all})%>
+    <%= content_tag("div", nil, :id => 'invisible', :data => {:event => @event, :lang => params[:lang], :sponsors => Sponsor.where(:id => Sponsorship.where(:event_id => @event.id).select(:sponsor_id))})%>
     <title> <%= @event.event_name %> </title>
     <%= javascript_include_tag  params[:event].to_s.gsub!('-', '_') << '_functions', 'data-turbolinks-track' => true %>
 </head>
