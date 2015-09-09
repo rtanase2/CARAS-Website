@@ -70,10 +70,10 @@ ActiveRecord::Schema.define(version: 20150908213718) do
   end
 
   create_table "sponsors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "sponsor_name"
     t.string   "logo_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "sponsorships", force: :cascade do |t|
