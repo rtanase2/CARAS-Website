@@ -12,235 +12,299 @@
 		</div>
 	</div>
 
-    <%= form_for(:volunteer, html: {name: "volunteerForm"}) do |f| %>
-        <p>
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
-        </p>
-        
-        <p>
-            <%= f.label :email %><br>
-            <%= f.text_field :email %>
-        </p>
-        
-        <p>
-            <%= f.label :address %><br>
-            <%= f.text_field :address %>
-        </p>
-        
-        <p>
-            <%= f.label :city %><br>
-            <%= f.text_field :city %>
-        </p>
-        
-        <p>
-            <%= f.label :zip %><br>
-            <%= f.text_field :zip %>
-        </p>
-        
-        <p>
-            <%= f.label :phone %><br>
-            <%= f.text_field :phone %>
-        </p>
-        
-        <p>
-            <%= f.label :age %><br>
-            <%= f.text_field :age %>
-        </p>
-
-        <p>
-            <%= f.label(:volunteer_in_school, "Is the volunteer in school?") %> </br>
-            <%= radio_button("volunteer", "volunteer_in_school", true) %>
-            <%= f.label(:volunteer_in_school, "Yes") %> </br>
-            <%= radio_button("volunteer", "volunteer_in_school", false) %>
-            <%= f.label(:volunteer_in_school, "No") %>
-        </p>
-        
-        <p>
-            <%= f.label :school_name %><br>
-            <%= f.text_field :school_name %>
-        </p>
-        
-        <p>
-            <%= f.label :school_phone %><br>
-            <%= f.text_field :school_phone %>
-        </p>
-        
-        <p>
-            <%= f.label :start_date %><br>
-            <%= f.text_field :start_date %>
-        </p>
-
-        <p>
-            <%= f.label(:available_days, "Are you available during the day (SPECIFY TIME FRAME!!!)?") %> </br>
-            <%= radio_button("volunteer", "available_days", true) %>
-            <%= f.label(:available_days, "Yes") %> </br>
-            <%= radio_button("volunteer", "available_days", false) %>
-            <%= f.label(:available_days, "No") %>			
-        </p>
-        
-        <p>
-            <%= f.label(:available_mornings, "Are you available in the morning (SPECIFY TIME FRAME!!!)?") %> </br>
-            <%= radio_button("volunteer", "available_mornings", true) %>
-            <%= f.label(:available_mornings, "Yes") %> </br>
-            <%= radio_button("volunteer", "available_mornings", false) %>
-            <%= f.label(:available_mornings, "No") %>
-        </p>
-
-        <p>
-            <%= f.label(:available_evenings, "Are you available in the evening (SPECIFY TIME FRAME!!!)?") %> </br>
-            <%= radio_button("volunteer", "available_evenings", true) %>
-            <%= f.label(:available_evenings, "Yes") %> </br>
-            <%= radio_button("volunteer", "available_evenings", false) %>
-            <%= f.label(:available_evenings, "No") %>
-        </p>
-
-        <p>
-            <%= f.label :availability_by_day %><br>
-            <%= f.text_field :availability_by_day %>
-			
-			<!-- Optional stuff 
-				  Made new variables in the controller for Sun-Sat
-			-->
-			
-			<table border="3px">
-				<tr>
-					<td><strong><%= f.label :sunday %></strong></td>
-					<td><strong><%= f.label :monday %></strong></td>
-					<td><strong><%= f.label :tuesday %></strong></td>
-					<td><strong><%= f.label :wednesday %></strong></td>
-					<td><strong><%= f.label :thursday %></strong></td>
-					<td><strong><%= f.label :friday %></strong></td>
-					<td><strong><%= f.label :saturday %></strong></td>
-				</tr>
+	<div class="container">
+		<div class="row">
+			<div id="right">
 				
-				<tr>
-					<td><center><%= check_box("volunteer", "sunday") %></center></td>
-					<td><center><%= check_box("volunteer", "monday") %></center></td>
-					<td><center><%= check_box("volunteer", "tuesday") %></center></td>
-					<td><center><%= check_box("volunteer", "wednesday") %></center></td>
-					<td><center><%= check_box("volunteer", "thursday") %></center></td>
-					<td><center><%= check_box("volunteer", "friday") %></center></td>
-					<td><center><%= check_box("volunteer", "saturday") %></center></td>
-				</tr>
+				<%= form_for(:volunteer, html: {name: "volunteerForm", class: "form-horizontal", roles: "form"}) do |f| %>
+					<div class="form-group">
+						<%= f.label(:name, "Name:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:name, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:email, "Email:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:email, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:address, "Address:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:address, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:city, "City:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:city, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:zip, "Zip:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:zip, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:phone, "Phone:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:phone, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:age, "Age:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:age, class: "form-control") %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+						<%= f.label(:volunteer_in_school, "Is the volunteer in school?") %> </br>
+						<%= radio_button("volunteer", "volunteer_in_school", true) %>
+						<%= f.label(:volunteer_in_school, "Yes") %> </br>
+						<%= radio_button("volunteer", "volunteer_in_school", false) %>
+						<%= f.label(:volunteer_in_school, "No") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:school_name, "School:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:school_name, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:school_phone, "School Phone:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:school_phone, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:start_date, "Start Date:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:start_date, class: "form-control") %>
+						</div>
+					</div>
+
+					<!-- I don't think this is needed
+					
+					<p>
+						<%= f.label(:available_days, "Are you available during the day (SPECIFY TIME FRAME!!!)?") %> </br>
+						<%= radio_button("volunteer", "available_days", true) %>
+						<%= f.label(:available_days, "Yes") %> </br>
+						<%= radio_button("volunteer", "available_days", false) %>
+						<%= f.label(:available_days, "No") %>			
+					</p>
+					
+					<p>
+						<%= f.label(:available_mornings, "Are you available in the morning (SPECIFY TIME FRAME!!!)?") %> </br>
+						<%= radio_button("volunteer", "available_mornings", true) %>
+						<%= f.label(:available_mornings, "Yes") %> </br>
+						<%= radio_button("volunteer", "available_mornings", false) %>
+						<%= f.label(:available_mornings, "No") %>
+					</p>
+
+					<p>
+						<%= f.label(:available_evenings, "Are you available in the evening (SPECIFY TIME FRAME!!!)?") %> </br>
+						<%= radio_button("volunteer", "available_evenings", true) %>
+						<%= f.label(:available_evenings, "Yes") %> </br>
+						<%= radio_button("volunteer", "available_evenings", false) %>
+						<%= f.label(:available_evenings, "No") %>
+					</p>
+
+					<p>
+						<%= f.label :availability_by_day %><br>
+						<%= f.text_field :availability_by_day %>
+					</p>
+					
+					-->
+					
+					<div class="form-group">
+						<!-- Optional stuff 
+							  Made new variables in the controller for Sun-Sat
+						-->
+						
+						<%= f.label("Availability:", class: "control-label col-sm-2") %>
+						<div class="col-sm-2">
+							<table border="3px">
+								<tr>
+									<td><strong><%= f.label :sunday %></strong></td>
+									<td><strong><%= f.label :monday %></strong></td>
+									<td><strong><%= f.label :tuesday %></strong></td>
+									<td><strong><%= f.label :wednesday %></strong></td>
+									<td><strong><%= f.label :thursday %></strong></td>
+									<td><strong><%= f.label :friday %></strong></td>
+									<td><strong><%= f.label :saturday %></strong></td>
+								</tr>
+								
+								<tr>
+									<td><center><%= check_box("volunteer", "sunday") %></center></td>
+									<td><center><%= check_box("volunteer", "monday") %></center></td>
+									<td><center><%= check_box("volunteer", "tuesday") %></center></td>
+									<td><center><%= check_box("volunteer", "wednesday") %></center></td>
+									<td><center><%= check_box("volunteer", "thursday") %></center></td>
+									<td><center><%= check_box("volunteer", "friday") %></center></td>
+									<td><center><%= check_box("volunteer", "saturday") %></center></td>
+								</tr>
+								
+								<tr>
+									<td>
+										<%= f.label(:time_start_sun, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_sun") %></center><br>
+										<%= f.label(:time_end_sun, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_sun") %></center>
+									</td>
+									<td>
+										<%= f.label(:time_start_mon, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_mon") %></center><br>
+										<%= f.label(:time_end_mon, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_mon") %></center>
+									</td>
+									<td>
+										<%= f.label(:time_start_tues, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_tues") %></center><br>
+										<%= f.label(:time_end_tues, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_tues") %></center>
+									</td>
+									<td>
+										<%= f.label(:time_start_wed, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_wed") %></center><br>
+										<%= f.label(:time_end_wed, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_wed") %></center>
+									</td>
+									<td>
+										<%= f.label(:time_start_thurs, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_thurs") %></center><br>
+										<%= f.label(:time_end_thurs, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_thurs") %></center>
+									</td>
+									<td>
+										<%= f.label(:time_start_fri, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_fri") %></center><br>
+										<%= f.label(:time_end_fri, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_fri") %></center>
+									</td>
+									<td>
+										<%= f.label(:time_start_sat, "Approx. Time Start") %><br>
+										<center><%= time_field("volunteer", "time_start_sat") %></center><br>
+										<%= f.label(:time_end_sat, "Approx. Time End") %><br>
+										<center><%= time_field("volunteer", "time_end_sat") %></center>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<%= f.label(:type_of_service, "What type of service are you most interested in?") %> </br>
+							<%= radio_button("type_of_service", "volunteer_in_school", "event") %>
+							<%= f.label(:type_of_service, "Event") %> </br>
+							<%= radio_button("type_of_service", "volunteer_in_school", "office") %>
+							<%= f.label(:type_of_service, "Office") %> </br>
+							<%= radio_button("type_of_service", "volunteer_in_school", "program") %>
+							<%= f.label(:type_of_service, "Program") %> </br>
+							<%= radio_button("type_of_service", "volunteer_in_school", "other") %>
+							<%= f.label(:type_of_service, "Other") %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<%= f.label(:name_org, "Organization:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+							<%= f.text_field(:name_org, class: "form-control") %>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<%= f.label(:event, "Event:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+							<%= f.text_field(:event, class: "form-control") %>
+						</div>
+					</div>
+					
+					<!-- Terms -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
+								I understand that participation in the above Activity or Event may be hazardous for the above-named participant.<br>
+								In signing below, I assume risk of harm or injury which may occur to the participant as a result of participating in the above-named event or activity. I hereby release Community Agency for Resources, Advocacy and Services,
+								CARAS 8545 Monterey Road #A, Gilroy, CA and its officers, employees, or agents from any liability costs and damages resulting in this individual's participation.
+							</div>
+						</div>
+					</div>
+					
+					<!-- End Terms -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<%= check_box("volunteer", "signed_participant", {onclick: 'checkBox()'}, true, false) %>
+							<%= f.label(:parent_name, "By checking this box, I (the participant), authorize that I would like to volunteer at CARAS and have read the above terms.") %>
+						</div>
+					</div>
+					
+					<!--
+						Trying to add collapse-ability to the form. Rails isn't liking it apparently. -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<%= check_box("volunteer", "minor", { onclick: 'displayMinorTerms()' }, true, false) %>
+							<%= f.label(:minor, "Is the participant a minor?") %>
+						</div>
+					</div>
+					
+					<div id="minorTerms" style=" display:none">	
+						<!-- Minor terms -->
+						
+						<div class="form-group">
+							<div class="col-sm-offset-2">
+								<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
+									I agree that the minor has my consent to participate in the event or activity.<br>
+									I also give my consent for the business or organization to seek emergency treatment for the minor if necessary, and I agree to accept financial responsibility for the costs related to this emergency treatment.
+								</div>
+							</div>
+						</div>
+						
+						<!-- End Minor Terms -->
+						
+						<div class="form-group">
+							<div class="col-sm-offset-2">
+								<%= check_box("volunteer", "signed_parent", {onclick: 'checkBox()'}, true, false) %>
+								<%= f.label(:parent_name, "By checking this box, I (the gaurdian), authorize that my child can volunteer with CARAS and have read the above terms.") %>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<%= f.label(:parent_name, "Parent Name:", class: "control-label col-sm-2") %>
+							<div class="col-sm-5">
+							<%= f.text_field(:parent_name, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<button type="submit" name="commit" value="Submit" id="submitButton" disabled>Submit</button>
+						</div>
+					</div>
+				<% end %>
 				
-				<tr>
-					<td>
-						<%= f.label(:time_start_sun, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_sun") %></center><br>
-						<%= f.label(:time_end_sun, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_sun") %></center>
-					</td>
-					<td>
-						<%= f.label(:time_start_mon, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_mon") %></center><br>
-						<%= f.label(:time_end_mon, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_mon") %></center>
-					</td>
-					<td>
-						<%= f.label(:time_start_tues, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_tues") %></center><br>
-						<%= f.label(:time_end_tues, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_tues") %></center>
-					</td>
-					<td>
-						<%= f.label(:time_start_wed, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_wed") %></center><br>
-						<%= f.label(:time_end_wed, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_wed") %></center>
-					</td>
-					<td>
-						<%= f.label(:time_start_thurs, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_thurs") %></center><br>
-						<%= f.label(:time_end_thurs, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_thurs") %></center>
-					</td>
-					<td>
-						<%= f.label(:time_start_fri, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_fri") %></center><br>
-						<%= f.label(:time_end_fri, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_fri") %></center>
-					</td>
-					<td>
-						<%= f.label(:time_start_sat, "Approx. Time Start") %><br>
-						<center><%= time_field("volunteer", "time_start_sat") %></center><br>
-						<%= f.label(:time_end_sat, "Approx. Time End") %><br>
-						<center><%= time_field("volunteer", "time_end_sat") %></center>
-					</td>
-				</tr>
-			</table>
-        </p>
-        
-        <p>
-            <%= f.label(:type_of_service, "What type of service are you most interested in?") %> </br>
-            <%= radio_button("type_of_service", "volunteer_in_school", "event") %>
-            <%= f.label(:type_of_service, "Event") %> </br>
-            <%= radio_button("type_of_service", "volunteer_in_school", "office") %>
-            <%= f.label(:type_of_service, "Office") %> </br>
-            <%= radio_button("type_of_service", "volunteer_in_school", "program") %>
-            <%= f.label(:type_of_service, "Program") %> </br>
-            <%= radio_button("type_of_service", "volunteer_in_school", "other") %>
-            <%= f.label(:type_of_service, "Other") %>
-        </p>
-
-        <p>
-            <%= f.label :name_org %><br>
-            <%= f.text_field :name_org %>
-        </p>
-
-        <p>
-            <%= f.label :event %><br>
-            <%= f.text_field :event %>
-        </p>
-        
-		<!-- Terms -->
-		
-		<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
-			I understand that participation in the above Activity or Event may be hazardous for the above-named participant.<br>
-			In signing below, I assume risk of harm or injury which may occur to the participant as a result of participating in the above-named event or activity. I hereby release Community Agency for Resources, Advocacy and Services,
-			CARAS 8545 Monterey Road #A, Gilroy, CA and its officers, employees, or agents from any liability costs and damages resulting in this individual's participation.
-		</div>
-		
-		<!-- End Terms -->
-		
-        <p>
-            <%= check_box("volunteer", "signed_participant", {onclick: 'checkBox()'}, true, false) %>
-            <%= f.label(:parent_name, "By checking this box, I (the participant), authorize that I would like to volunteer at CARAS and have read the above terms.") %>
-        </p>
-		
-		<!--
-			Trying to add collapse-ability to the form. Rails isn't liking it apparently. -->
-		
-		<p>
-			<%= check_box("volunteer", "minor", { onclick: 'displayMinorTerms()' }, true, false) %>
-			<%= f.label(:minor, "Is the participant a minor?") %>
-		</p>
-		
-		<div id="minorTerms" style=" display:none">	
-			<!-- Minor terms -->
-			
-			<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
-				I agree that the minor has my consent to participate in the event or activity.<br>
-				I also give my consent for the business or organization to seek emergency treatment for the minor if necessary, and I agree to accept financial responsibility for the costs related to this emergency treatment.
 			</div>
-			
-			<!-- End Minor Terms -->
-			
-			<p>
-				<%= check_box("volunteer", "signed_parent", {onclick: 'checkBox()'}, true, false) %>
-				<%= f.label(:parent_name, "By checking this box, I (the gaurdian), authorize that my child can volunteer with CARAS and have read the above terms.") %>
-			</p>
-			
-			<p>
-				<%= f.label :parent_name %><br>
-				<%= f.text_field :parent_name %>
-			</p>		
 		</div>
-        
-		<p id="submitButtonArea" onclick="clickSubmit()">
-			<button type="submit" name="commit" value="Submit" id="submitButton" disabled>Submit</button>
-		</p>
-    <% end %>
+	</div>
+	
+	
 	
 	<script>
 	
