@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "volunteer-new(\?lang=:lang)" => "volunteer#create"
   
   get "car-show" => "car_show_participant#home"
+  get "car-show/new" => "car_show_participant#new"
+  post "car-show/new" => "car_show_participant#create"
   get ":page(\?lang=:lang)" => "pages#show"
 
   # The priority is based upon order of creation: first created -> highest priority.

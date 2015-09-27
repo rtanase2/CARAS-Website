@@ -1,0 +1,118 @@
+<!DOCUMENT html>
+<html>
+	<title>CARAS | Car Show Form</title>
+	
+	<body>
+		<div class="jumbotron">
+			<div>
+				<h1>Car Show</h1>
+			</div>
+		</div>
+		
+		<div class="container">
+		<div class="row">
+			<div id="right">
+				
+				<%= form_for(:volunteer, html: {name: "volunteerForm", class: "form-horizontal", roles: "form"}) do |f| %>
+					<div class="form-group">
+						<%= f.label(:name, "Name:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:name, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:address, "Address:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:address, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:email, "Email:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:email, class: "form-control") %>
+						</div>
+					</div>
+					
+					<!--
+					<div class="form-group">
+						<%= f.label(:city, "City:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:city, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:zip, "Zip:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:zip, class: "form-control") %>
+						</div>
+					</div>
+					-->
+					
+					<div class="form-group">
+						<%= f.label(:year, "Year:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:year, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:make, "Make/Model:", class: "control-label col-sm-2") %>
+						<div class="col-sm-5">
+						<%= f.text_field(:make, class: "form-control") %>
+						</div>
+					</div>
+					
+					<!-- Terms -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
+								In consideration of this entry, I, undersigned, understand and agree that CARAS, City of Gilroy and sponsors will not be held responsible for any liability that may occur during this show to the car, motorcycle or
+								bicycle. Any registered participant for a vehicle or motorcycle carry liability insurance. All registered entrants participate with the understanding that they do so at their own risk. No refunds rain or shine.
+							</div>
+						</div>
+					</div>
+					
+					<!-- End Terms -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<%= check_box("carShowParticipant", "signed", {onclick: 'checkBox()'}, true, false) %>
+							<%= f.label(:signed, "By checking this box, I (the participant), authorize that I would like to enter my vehicle into the show and have read the above terms.") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<a href="/car-show">
+								<button type="submit" name="commit" value="Submit" id="submitButton" disabled>Submit</button>
+							</a>
+						</div>
+					</div>
+				<% end %>
+				
+			</div>
+		</div>
+	</div>
+		
+	<%= render file: "layouts/footer" %>
+	
+		<script>
+	
+			<!-- Enabling and disabling the submit button -->
+			
+			function checkBox(){
+				if (document.getElementById("carShowParticipant_signed").checked){
+					document.volunteerForm.commit.disabled = false;		
+				}
+				else{
+					document.volunteerForm.commit.disabled = true;
+				}
+			}
+			
+		</script>
+	</body>
+</html>
