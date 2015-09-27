@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get "car-show" => "car_show_participant#home"
   get "car-show/new" => "car_show_participant#new"
   post "car-show/new" => "car_show_participant#create"
+  
+  get "tamale-cook-off" => "cook_off_participant#home"
+  get "tamale-cook-off/new" => "cook_off_participant#new"
+  post "tamale-cook-off/new" => "cook_off_participant#create"
   get ":page(\?lang=:lang)" => "pages#show"
 
   # The priority is based upon order of creation: first created -> highest priority.

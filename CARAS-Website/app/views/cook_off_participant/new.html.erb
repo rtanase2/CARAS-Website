@@ -1,0 +1,108 @@
+<!DOCUMENT html>
+<html>
+	<title>CARAS | Tamale Cook Off Form</title>
+	
+	<body>
+		<div class="jumbotron">
+			<div>
+				<h1>Tamale Cook Off</h1>
+			</div>
+		</div>
+		
+		<div class="container">
+		<div class="row">
+			<div id="right">
+				
+				<%= form_for(:cookOffParticipant, html: {name: "cookOffForm", class: "form-horizontal", roles: "form"}) do |f| %>
+					<div class="form-group">
+						<%= f.label(:region_of_tamale, "Country or Region of Tamale:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:region_of_tamale, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:name, "Name of Tamale:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:name, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:fillings_ingredients, "Type of Filling & Ingredients:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:fillings_ingredients, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:company_org, "Company or Organization:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:company_org, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:contact_person, "Contact Person:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:contact_person, class: "form-control") %>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label(:phone_number, "Telephone:", class: "control-label col-sm-2")%>
+						<div class="col-sm-5">
+						<%= f.text_field(:phone_number, class: "form-control") %>
+						</div>
+					</div>
+					
+					<!-- Terms -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<div style="width:600px;height:100px;line-height:1em;overflow:auto;padding:5px">
+								Only the first 15 entries will be intered into the contest.
+								Please prepare six (6) of the same type tamales and deliver (ready to eat) to Karina at El Charrito Market on Sunday September 27th, 2015 before 3:30 PM.
+								Tamales will be judged on flavor, texture of masa, appearance, filling, aroma.<br>
+								First Prize: $150.00<br>
+								Second Prize: $100.00<br>
+								Third Prize: $50.00<br>
+								When tamales are submitted at event, all participants will need to submit proof of authentic nixtamal masa purchase that have been used to make tamales. You can purchase masa de nixtamal at El Charrito Market in Gilroy 7638
+								Monterey St. (408)842-3659.
+							</div>
+						</div>
+					</div>
+					
+					<!-- End Terms -->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2">
+							<a href="/tamale-cook-off">
+								<button type="submit" name="commit" value="Submit" id="submitButton">Submit</button>
+							</a>
+						</div>
+					</div>
+				<% end %>
+				
+			</div>
+		</div>
+	</div>
+		
+	<%= render file: "layouts/footer" %>
+	
+		<script>
+	
+			<!-- Enabling and disabling the submit button -->
+			
+			function checkBox(){
+				if (document.getElementById("carShowParticipant_signed").checked){
+					document.volunteerForm.commit.disabled = false;		
+				}
+				else{
+					document.volunteerForm.commit.disabled = true;
+				}
+			}
+			
+		</script>
+	</body>
+</html>

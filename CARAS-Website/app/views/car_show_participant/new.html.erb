@@ -13,7 +13,7 @@
 		<div class="row">
 			<div id="right">
 				
-				<%= form_for(:volunteer, html: {name: "volunteerForm", class: "form-horizontal", roles: "form"}) do |f| %>
+				<%= form_for(:carShowParticipant, html: {name: "carShowParticipantForm", class: "form-horizontal", roles: "form"}) do |f| %>
 					<div class="form-group">
 						<%= f.label(:name, "Name:", class: "control-label col-sm-2")%>
 						<div class="col-sm-5">
@@ -34,22 +34,6 @@
 						<%= f.text_field(:email, class: "form-control") %>
 						</div>
 					</div>
-					
-					<!--
-					<div class="form-group">
-						<%= f.label(:city, "City:", class: "control-label col-sm-2") %>
-						<div class="col-sm-5">
-						<%= f.text_field(:city, class: "form-control") %>
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<%= f.label(:zip, "Zip:", class: "control-label col-sm-2") %>
-						<div class="col-sm-5">
-						<%= f.text_field(:zip, class: "form-control") %>
-						</div>
-					</div>
-					-->
 					
 					<div class="form-group">
 						<%= f.label(:year, "Year:", class: "control-label col-sm-2") %>
